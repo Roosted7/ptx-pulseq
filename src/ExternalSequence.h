@@ -48,7 +48,8 @@ enum MessageType {
 };
 
 // Define the current level of messages to display
-const MessageType MSG_LEVEL = NORMAL_MSG;
+extern MessageType MSG_LEVEL;       // ThomasR: Made MSG_LEVEL configurable in the code
+//const MessageType MSG_LEVEL = NORMAL_MSG;
 //const MessageType MSG_LEVEL = DEBUG_MEDIUM_LEVEL;
 //const MessageType MSG_LEVEL = DEBUG_LOW_LEVEL;
 
@@ -58,7 +59,7 @@ const MessageType MSG_LEVEL = NORMAL_MSG;
  */
 enum Event {
 //	DELAY,
-	RF,
+	RFp,
 	GX,
 	GY,
 	GZ,
@@ -83,7 +84,7 @@ struct RFEvent
 	int timeShape;       /**< @brief ID of shape for time sampling points */
 	float freqOffset;    /**< @brief Frequency offset of transmitter (Hz) */
 	float phaseOffset;   /**< @brief Phase offset of transmitter (rad) */
-	int delay;           /**< @brief Delay prior to the pulse (us) */
+	float delay;           /**< @brief Delay prior to the pulse (us) */		// ThomasR: Pulseq fix non-int delays produced by MATLAB
 };
 
 
@@ -98,7 +99,7 @@ struct RFEvent
 struct GradEvent
 {
 	float amplitude;      /**< @brief Amplitude of gradient (Hz/m) */
-	int delay;
+	float delay;		// ThomasR: Pulseq fix non-int delays produced by MATLAB
 	// Trapezoid:
 	long rampUpTime;      /**< @brief Ramp up time of trapezoid (us) */
 	long flatTime;        /**< @brief Flat-top time of trapezoid (us) */
@@ -120,7 +121,7 @@ struct ADCEvent
 {
 	int numSamples;     /**< @brief Number of samples */
 	int dwellTime;      /**< @brief Dwell time of ADC readout (ns) */
-	int delay;          /**< @brief Delay before first sample (us) */
+	float delay;          /**< @brief Delay before first sample (us) */		// ThomasR: Pulseq fix non-int delays produced by MATLAB
 	float freqOffset;   /**< @brief Frequency offset of receiver (Hz) */
 	float phaseOffset;  /**< @brief Phase offset of receiver (rad) */
 };
@@ -369,6 +370,13 @@ public:
 	 */
 	float* GetArbGradShapePtr(int channel);
 
+	// ThomasR: Pulseq - START
+	/**
+	 * @brief Get dwell time for the arbitrary gradient waveform (in us)
+	 */
+	float GetArbGradDwellTime();
+	// ThomasR: Pulseq - END
+
 	/**
 	 * @brief Return the timening and the shape of the ExtTrp grdient on the given gradient channel.
 	 * Only relevant for ExtTrap gradients
@@ -410,6 +418,18 @@ public:
 	 * @brief Get dwell time for the RF amplitude and phase shapes (in us)
 	 */
 	float GetRFDwellTime();
+
+	// ThomasR: PTX Pulseq - START
+	/**
+	 * @brief Directly get a the RF amplitude shape as 2D vector, by reference
+	 */
+	const std::vector<std::vector<float> >& GetRFAmplitude();
+
+	/**
+	 * @brief Directly get a the RF phase shape as 2D vector, by reference
+	 */
+	const std::vector<std::vector<float> >& GetRFPhase();
+	// ThomasR: PTX Pulseq - END
 
 	/**
 	 * @brief Return the ADC event
@@ -468,12 +488,15 @@ protected:
 	// Below is only valid once decompressed:
 
 	// RF
-	std::vector<float> rfAmplitude;    /**< @brief RF amplitude shape (uncompressed) */
-	std::vector<float> rfPhase;        /**< @brief RF phase shape (uncompressed) */
+	// ThomasR: PTX Pulseq - START
+	std::vector<std::vector<float> > rfAmplitude;    /**< @brief RF amplitude shape (uncompressed) */
+	std::vector<std::vector<float> > rfPhase;        /**< @brief RF phase shape (uncompressed) */
+	// ThomasR: PTX Pulseq - END
 	float              rfDwellTime_us; /**< @brief dwell time of the RF shapes (in us) */
 
 	// Gradient waveforms
 	std::vector< std::vector<float> > gradWaveforms;    /**< @brief Arbitrary gradient shapes for each channel (uncompressed) */
+	float grDwellTime_us; /**< @brief dwell time of the arbitrary gradient shapes (in us) */	// ThomasR: Pulseq Add grDwell
 
 	// ExtTrap waveforms
 	std::vector< std::pair< std::vector< long >, std::vector< float > > > gradExtTrapForms;    /**< @brief ExtTrap gradient shapes for each channel (uncompressed) */
@@ -487,7 +510,7 @@ protected:
 // * ------------------------------------------------------------------ *
 inline int       SeqBlock::GetIndex() { return index; }
 
-inline bool      SeqBlock::isRF() { return (events[RF]>0); }
+inline bool      SeqBlock::isRF() { return (events[RFp]>0); }
 inline bool      SeqBlock::isTrapGradient(int channel) { return ((events[channel+GX]>0) && (grad[channel].waveShape==0)); }
 inline bool      SeqBlock::isExtTrapGradient(int channel) { return ((events[channel+GX]>0) && (grad[channel].waveShape!=0) && (grad[channel].timeShape!=0)); }
 inline bool      SeqBlock::isArbitraryGradient(int channel) { return ((events[channel+GX]>0) && (grad[channel].waveShape!=0) && (grad[channel].timeShape==0)); }
@@ -533,19 +556,25 @@ inline std::string SeqBlock::GetTypeString() {
 
 inline float*    SeqBlock::GetArbGradShapePtr(int channel) { return (gradWaveforms[channel].size()>0) ? &gradWaveforms[channel][0] : NULL; }
 inline int       SeqBlock::GetArbGradNumSamples(int channel) {	return gradWaveforms[channel].size(); }
+inline float     SeqBlock::GetArbGradDwellTime() { return grDwellTime_us; }		// ThomasR: Pulseq Add grDwell
 
 inline const std::vector<long>&  SeqBlock::GetExtTrapGradTimes(int channel) { return gradExtTrapForms[channel].first; }
 inline const std::vector<float>& SeqBlock::GetExtTrapGradShape(int channel) { return gradExtTrapForms[channel].second; }
 
-inline float*    SeqBlock::GetRFAmplitudePtr() { return &rfAmplitude[0]; }
-inline float*    SeqBlock::GetRFPhasePtr() { return &rfPhase[0]; }
-inline int       SeqBlock::GetRFLength() { return rfAmplitude.size(); }
+// ThomasR: PTX Pulseq - START
+inline float*    SeqBlock::GetRFAmplitudePtr() { return &rfAmplitude[0][0]; }
+inline float*    SeqBlock::GetRFPhasePtr() { return &rfPhase[0][0]; }
+inline int       SeqBlock::GetRFLength() { return rfAmplitude[0].size(); }
 inline float     SeqBlock::GetRFDwellTime() { return rfDwellTime_us; }
+
+inline const std::vector<std::vector<float> >&	SeqBlock::GetRFAmplitude() 	{ return rfAmplitude; }
+inline const std::vector<std::vector<float> >&	SeqBlock::GetRFPhase() 		{ return rfPhase; }
 
 inline void      SeqBlock::free() {
 	// Force the memory to be freed
-	std::vector<float>().swap(rfAmplitude);
-	std::vector<float>().swap(rfPhase);
+	std::vector<std::vector<float> >().swap(rfAmplitude);
+	std::vector<std::vector<float> >().swap(rfPhase);
+	// ThomasR: PTX Pulseq - END
 	std::vector<std::vector<float> >().swap(gradWaveforms);
 	std::vector<std::pair<std::vector<long>,std::vector<float> > >().swap(gradExtTrapForms);
  }
@@ -634,7 +663,7 @@ class ExternalSequence
 	 *
 	 * Display a message only if the MSG_LEVEL is sufficiently high.
 	 * This function calls the low-level output function, which can be overridden
-	 * using SetPutMsgFunction().
+	 * using SetPrintFunction().
 	 *
 	 * @param  level  type of message
 	 * @param  ss     string stream containing the message
@@ -896,7 +925,7 @@ inline std::string	ExternalSequence::GetDefinitionStr(std::string key){
 		return std::string();
 }
 
-inline void ExternalSequence::defaultPrint(const std::string &str) { std::cout << str << std::endl; }
+inline void ExternalSequence::defaultPrint(const std::string &str) { OSLOG_info(NULL, "+Pulseq: %s", str.c_str()); }
 inline void ExternalSequence::SetPrintFunction(PrintFunPtr fun) { print_fun=fun; }
 
 inline bool ExternalSequence::isSigned() { return m_bSignatureDefined; }
