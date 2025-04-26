@@ -341,7 +341,7 @@ bool ExternalSequence::load(std::istream& data_stream, load_mode loadMode /*=lm_
 				if (version_combined<1004000L)
 				{
 					// pre v1.4.0
-					if (7!=sscanf(buffer, "%d%f%d%d%d%f%f", &rfId, &(event.amplitude),
+					if (7!=sscanf(buffer, "%d%f%d%d%f%f%f", &rfId, &(event.amplitude),  	// ThomasR: Pulseq fix non-int delays produced by MATLAB
 								&(event.magShape),&(event.phaseShape), &(event.delay),
 								&(event.freqOffset), &(event.phaseOffset)
 								)) {
@@ -357,7 +357,7 @@ bool ExternalSequence::load(std::istream& data_stream, load_mode loadMode /*=lm_
 				else if (version_combined < 1005000) 
 				{
 					// 1.4.0
-					if (8!=sscanf(buffer, "%d%f%d%d%d%d%f%f", &rfId, &(event.amplitude),
+					if (8!=sscanf(buffer, "%d%f%d%d%d%f%f%f", &rfId, &(event.amplitude),    	// ThomasR: Pulseq fix non-int delays produced by MATLAB
 								&(event.magShape), &(event.phaseShape), &(event.timeShape),
 								&(event.delay), &(event.freqOffset), &(event.phaseOffset)
 								)) {
@@ -372,7 +372,7 @@ bool ExternalSequence::load(std::istream& data_stream, load_mode loadMode /*=lm_
 				else 
 				{
 					// 1.5.0
-					if (12!=sscanf(buffer, "%d%f%d%d%d%f%d%f%f%f%f %c", &rfId, &(event.amplitude),
+					if (12!=sscanf(buffer, "%d%f%d%d%d%f%f%f%f%f%f %c", &rfId, &(event.amplitude),		// ThomasR: Pulseq fix non-int delays produced by MATLAB
 								&(event.magShape),&(event.phaseShape), &(event.timeShape), &(event.center),
 								&(event.delay), &(event.freqPPM), &(event.phasePPM), &(event.freqOffset), &(event.phaseOffset), &(event.use)
 								)) {
@@ -402,7 +402,7 @@ bool ExternalSequence::load(std::istream& data_stream, load_mode loadMode /*=lm_
 				if ( version_combined>=1005000L )
 				{
 					// v1.5.0
-					if (7!=sscanf(buffer, "%d%f%f%f%d%d%d", &gradId, &(event.amplitude), &(event.first), &(event.last), &(event.waveShape), &(event.timeShape), &(event.delay))) {
+					if (7!=sscanf(buffer, "%d%f%f%f%d%d%f", &gradId, &(event.amplitude), &(event.first), &(event.last), &(event.waveShape), &(event.timeShape), &(event.delay))) {	// ThomasR: Pulseq fix non-int delays produced by MATLAB
 						print_msg(ERROR_MSG, std::ostringstream().flush() << "*** ERROR: failed to decode v1.4.x gradient event\n" << buffer << std::endl );
 						return false;
 					}
@@ -410,7 +410,7 @@ bool ExternalSequence::load(std::istream& data_stream, load_mode loadMode /*=lm_
 				else if ( version_combined>=1004000L )
 				{
 					// v1.4.0
-					if (5!=sscanf(buffer, "%d%f%d%d%d", &gradId, &(event.amplitude), &(event.waveShape), &(event.timeShape), &(event.delay))) {
+					if (5!=sscanf(buffer, "%d%f%d%d%f", &gradId, &(event.amplitude), &(event.waveShape), &(event.timeShape), &(event.delay))) { 	// ThomasR: Pulseq fix non-int delays produced by MATLAB
 						print_msg(ERROR_MSG, std::ostringstream().flush() << "*** ERROR: failed to decode v1.4.x gradient event\n" << buffer << std::endl );
 						return false;
 					}
@@ -421,7 +421,7 @@ bool ExternalSequence::load(std::istream& data_stream, load_mode loadMode /*=lm_
 				{
 					// pre v1.4.0
 					event.timeShape=0;
-					if (4!=sscanf(buffer, "%d%f%d%d", &gradId, &(event.amplitude), &(event.waveShape), &(event.delay))) {
+					if (4!=sscanf(buffer, "%d%f%d%f", &gradId, &(event.amplitude), &(event.waveShape), &(event.delay))) {   	// ThomasR: Pulseq fix non-int delays produced by MATLAB
 						print_msg(ERROR_MSG, std::ostringstream().flush() << "*** ERROR: failed to decode v1.2.x gradient event\n" << buffer << std::endl );
 						return false;
 					}
@@ -446,7 +446,7 @@ bool ExternalSequence::load(std::istream& data_stream, load_mode loadMode /*=lm_
 				}
 				int gradId;
 				GradEvent event;
-				if (6!=sscanf(buffer, "%d%f%ld%ld%ld%d", &gradId, &(event.amplitude),
+				if (6!=sscanf(buffer, "%d%f%ld%ld%ld%f", &gradId, &(event.amplitude),   	// ThomasR: Pulseq fix non-int delays produced by MATLAB
 					&(event.rampUpTime),&(event.flatTime),&(event.rampDownTime),&(event.delay))) {
 					print_msg(ERROR_MSG, std::ostringstream().flush() << "*** ERROR: failed to decode trapezoid gradient entry" << buffer << std::endl );
 					return false;
@@ -477,7 +477,7 @@ bool ExternalSequence::load(std::istream& data_stream, load_mode loadMode /*=lm_
 				if ( version_combined>=1005000L )
 				{
 					// v1.5.0
-					if (9!=sscanf(buffer, "%d%d%d%d%f%f%f%f%d", &adcId, &(event.numSamples),
+					if (9!=sscanf(buffer, "%d%d%d%f%f%f%f%f%d", &adcId, &(event.numSamples),	// ThomasR: Pulseq fix non-int delays produced by MATLAB
 								&(event.dwellTime),&(event.delay),&(event.freqPPM),&(event.phasePPM),&(event.freqOffset),&(event.phaseOffset),&(event.phaseModulationShape))) {
 						print_msg(ERROR_MSG, std::ostringstream().flush() << "*** ERROR: failed to decode ADC event\n" << buffer << std::endl );
 						return false;
@@ -486,7 +486,7 @@ bool ExternalSequence::load(std::istream& data_stream, load_mode loadMode /*=lm_
 				else
 				{
 					// v1.4.0 and older
-					if (6!=sscanf(buffer, "%d%d%d%d%f%f", &adcId, &(event.numSamples),
+					if (6!=sscanf(buffer, "%d%d%d%f%f%f", &adcId, &(event.numSamples),  	// ThomasR: Pulseq fix non-int delays produced by MATLAB
 								&(event.dwellTime),&(event.delay),&(event.freqOffset),&(event.phaseOffset))) {
 						print_msg(ERROR_MSG, std::ostringstream().flush() << "*** ERROR: failed to decode ADC event\n" << buffer << std::endl );
 						return false;
@@ -590,7 +590,7 @@ bool ExternalSequence::load(std::istream& data_stream, load_mode loadMode /*=lm_
 					LabelEvent	label;			   // write label event
 					switch (nExtensionID) {
 						case EXT_LIST: 
-							if (4!=sscanf(buffer, "%d%d%d%ld", &nID, &(extEntry.type), &(extEntry.ref), &(extEntry.next))) {
+							if (4!=sscanf(buffer, "%d%d%d%d", &nID, &(extEntry.type), &(extEntry.ref), &(extEntry.next))) {		// ThomasR: Fix read non-long for int next variable
 								print_msg(ERROR_MSG, std::ostringstream().flush() << "*** ERROR: failed to decode extension list entry\n" << buffer << std::endl );
 								return false;
 							}
@@ -834,9 +834,9 @@ bool ExternalSequence::load(std::istream& data_stream, load_mode loadMode /*=lm_
 			memset(events.id, 0, NUM_EVENTS*sizeof(int));
 			long dur_ru =0;
 
-			int ret=sscanf(buffer, "%d%d%d%d%d%d%d%d", &blockIdx,
+			int ret=sscanf(buffer, "%d%ld%d%d%d%d%d%d", &blockIdx,		// Thomas: Fix read long for duration (that is long variable)
 					&dur_ru,                                        // block duration
-					&events.id[RF],                                 // RF
+					&events.id[RFp],                                 // RF
 					&events.id[GX],&events.id[GY],&events.id[GZ],   // Gradients
 					&events.id[ADC],                                // ADCs
 					&events.id[EXT]                                 // Extensions
@@ -851,7 +851,7 @@ bool ExternalSequence::load(std::istream& data_stream, load_mode loadMode /*=lm_
 			if (!checkBlockReferences(events)) {
 				print_msg(ERROR_MSG, std::ostringstream().flush() << "*** ERROR: Block " << blockIdx
 					<< " contains references to undefined events" );
-				print_msg(ERROR_MSG, std::ostringstream().flush() << "***        RF:" << events.id[RF] << " GX:" << events.id[GX] << " GY:" << events.id[GY] << " GZ:" << events.id[GZ] << " ADC:" << events.id[ADC] << " EXT:" << events.id[EXT]);
+				print_msg(ERROR_MSG, std::ostringstream().flush() << "***        RF:" << events.id[RFp] << " GX:" << events.id[GX] << " GY:" << events.id[GY] << " GZ:" << events.id[GZ] << " ADC:" << events.id[ADC] << " EXT:" << events.id[EXT]);
 				return false;
 			}
 			// Add event IDs to list of blocks
@@ -1109,7 +1109,7 @@ SeqBlock*	ExternalSequence::GetBlock(int index) {
 	block->softDelay.numID=-1;
 	block->actualSoftDelay_ru=-1;
 	// Set event structures (if applicable) so e.g. gradient type can be determined
-	if (events.id[RF]>0)     block->rf      = m_rfLibrary[events.id[RF]];
+	if (events.id[RFp]>0)     block->rf      = m_rfLibrary[events.id[RFp]];
 	if (events.id[ADC]>0)    block->adc     = m_adcLibrary[events.id[ADC]];
 	for (unsigned int i=0; i<NUM_GRADS; i++)
 		if (events.id[GX+i]>0) block->grad[i] = m_gradLibrary[events.id[GX+i]];
@@ -1233,27 +1233,33 @@ bool ExternalSequence::decodeBlock(SeqBlock *block)
 {
 	int *events = &block->events[0];
 	print_msg(DEBUG_LOW_LEVEL, std::ostringstream().flush() << "Decoding block " << block->index << " events: "
-		<< events[0]+1 << " " << events[1]+1 << " " << events[2]+1 << " "
-		<< events[3]+1 << " " << events[4]+1 );
+		<< events[0] << " " << events[1] << " " << events[2] << " "     // ThomasR: Remove +1 (align with file)
+		<< events[3] << " " << events[4] );
 	
-	std::vector<float> waveform;	
+	std::vector<std::vector<float> > waveform;   // ThomasR: PTX Pulseq
 	// Decode RF
 	if (block->isRF())
 	{
 		// Decompress the shape for this channel
-		CompressedShape& shape = m_shapeLibrary[block->rf.magShape];
-		waveform.resize(shape.numUncompressedSamples);
-		if (!decompressShape(shape,&waveform[0]))
+		CompressedShape& shape = m_shapeLibrary[ABS(block->rf.magShape)];       // ThomasR: Pulseq block RF (shape could be negative)
+        // ThomasR: PTX Pulseq - START
+		waveform.resize(1);
+		waveform[0].resize(shape.numUncompressedSamples);
+		if (!decompressShape(shape,&waveform[0][0]))
 			return false;
+        // ThomasR: PTX Pulseq - END
 
 		//MZ: original Kelvin's code follows
 		CompressedShape& shapePhase = m_shapeLibrary[block->rf.phaseShape];
-		std::vector<float> waveform_p;
-		waveform_p.resize(shapePhase.numUncompressedSamples);
-		if (!decompressShape(shapePhase,&waveform_p[0]))
+        // ThomasR: PTX Pulseq - START
+		std::vector<std::vector<float> > waveform_p;
+		waveform_p.resize(1);
+		waveform_p[0].resize(shapePhase.numUncompressedSamples);
+		if (!decompressShape(shapePhase,&waveform_p[0][0]))
 			return false;
 		// Scale phase by 2pi
-		std::transform(waveform_p.begin(), waveform_p.end(), waveform_p.begin(), std::bind1st(std::multiplies<float>(),TWO_PI));
+		std::transform(waveform_p[0].begin(), waveform_p[0].end(), waveform_p[0].begin(), std::bind1st(std::multiplies<float>(),TWO_PI));
+        // ThomasR: PTX Pulseq - END
 
 		float fDwellTime_us=0;
 		// feature of v1.4.x
@@ -1279,25 +1285,55 @@ bool ExternalSequence::decodeBlock(SeqBlock *block)
 				// we resample the input on the fly 
 				// for now we just use the RF raster time
 				fDwellTime_us=m_dRadiofrequencyRasterTime_us;
-				int nSamples=int(0.5+waveform_t.back());
-				// for now we use nearest neighbour/right repetition interpolation
-				// FIXME/TODO: convert to complex, use linear interpolation and convert back to magnitude&phase
-				std::vector<float> wv_a(nSamples);
-				std::vector<float> wv_p(nSamples);
+
+                // ThomasR: PTX Pulseq - START
+
+				// Find number of tx channels. Currently simply count the number of starting values
+				unsigned const int num_tx = std::count(waveform_t.begin(), waveform_t.end(), waveform_t[0]);
+				print_msg(DEBUG_LOW_LEVEL, std::ostringstream().flush() << "num_tx = " << num_tx );
+
+				// Find the length of the pulse. Currently all channels must end on this
+				const unsigned int tmax = *std::max_element(waveform_t.begin(), waveform_t.end());
+				print_msg(DEBUG_LOW_LEVEL, std::ostringstream().flush() << "tmax = " << tmax );
+
+				int nSamples=int(0.5 + tmax);
+
+				std::vector<std::vector<float> > wv_a(num_tx, std::vector<float>(nSamples, 0));
+				std::vector<std::vector<float> > wv_p(num_tx, std::vector<float>(nSamples, 0));
+
 				int tc=0;
-				for(int c=0;c<nSamples;++c)
-				{
-					if(waveform_t[tc]<(c+1)) 
+				for (int cur_tx = 0; cur_tx < num_tx; cur_tx++) {	// start on 1, since we skip the first start check
+
+					// for now we use nearest neighbour/right repetition interpolation
+					// FIXME/TODO: convert to complex, use linear interpolation and convert back to magnitude&phase
+
+					
+					for(int c=0;c<nSamples;++c)
 					{
-						if (tc<waveform_t.size())
-							++tc;
+						if(waveform_t[tc]<(c+1)) 
+						{
+							if (tc<waveform_t.size() && waveform_t[tc]<tmax)
+								++tc;
+						}
+						wv_a[cur_tx][c]=waveform[0][tc];
+						wv_p[cur_tx][c]=waveform_p[0][tc];
 					}
-					wv_a[c]=waveform[tc];
-					wv_p[c]=waveform_p[tc];
+					if (cur_tx < (num_tx - 1)) tc++;
 				}
+
 				// replace the waveforms
 				waveform.swap(wv_a);
 				waveform_p.swap(wv_p);
+
+				// ThomasR: PTX Pulseq - END
+
+                // ThomasR: Pulseq block RF - START
+			    if (shapeTime.samples.size() == 2 && shape.samples[0] == 1 && shape.samples[1] == 1) {
+                    // Detect a (non-ptx) block pulse, and mark it by making the shape id of the magnitude shape (if it is not already so)
+                    block->rf.magShape = NEG(block->rf.magShape);
+                    print_msg(DEBUG_LOW_LEVEL, std::ostringstream().flush() << "block->rf.magShape = " << block->rf.magShape );
+                }
+                // ThomasR: Pulseq block RF - END
 			}
 		}
 		else
@@ -1310,10 +1346,16 @@ bool ExternalSequence::decodeBlock(SeqBlock *block)
 				fDwellTime_us=1.0; // old Pulseq's predefined RF raster time
 		}
 		//
-		block->rfAmplitude = std::vector<float>(waveform);
-		block->rfPhase = std::vector<float>(waveform_p);
+        // ThomasR: PTX Pulseq - START
+		block->rfAmplitude = std::vector<std::vector<float> > (waveform);
+		block->rfPhase = std::vector<std::vector<float> > (waveform_p);
+        // ThomasR: PTX Pulseq - END
 		block->rfDwellTime_us = fDwellTime_us;
 	}
+
+    block->grDwellTime_us = 0.0;    // ThomasR: Pulseq: Add grDwell, only filled if there is an gr arb waveform
+    
+    std::vector<float> waveform_gr;     // ThomasR: PTX Pulseq
 
 	// Decode gradients
 	for (int iC=GX; iC<ADC; iC++)
@@ -1326,8 +1368,8 @@ bool ExternalSequence::decodeBlock(SeqBlock *block)
 			print_msg(DEBUG_LOW_LEVEL, std::ostringstream().flush() << "Loaded shape with "
 				<< shape.samples.size() << " compressed samples" );
 
-			waveform.resize(shape.numUncompressedSamples);
-			if (!decompressShape(shape,&waveform[0]))
+			waveform_gr.resize(shape.numUncompressedSamples);    // ThomasR: PTX Pulseq
+			if (!decompressShape(shape,&waveform_gr[0]))         // ThomasR: PTX Pulseq
 				return false;
 
 			print_msg(DEBUG_LOW_LEVEL, std::ostringstream().flush() << "Shape uncompressed to "
@@ -1343,18 +1385,20 @@ bool ExternalSequence::decodeBlock(SeqBlock *block)
 
 			if (block->isArbGradWithOversampling(iC-GX))	// oversampling?
 			{
-				block->gradWaveforms[iC-GX] = std::vector<float>((waveform.size()+1)/2);
-				std::vector<float>::iterator it_os=waveform.begin();
+				block->gradWaveforms[iC-GX] = std::vector<float>((waveform_gr.size()+1)/2);
+				std::vector<float>::iterator it_os=waveform_gr.begin();
 				for (std::vector<float>::iterator it=block->gradWaveforms[iC-GX].begin(); it !=block->gradWaveforms[iC-GX].end(); ++it){
 					*it=*it_os;
 					// std::advance(it_os,2); // this doen't work because of the odd number of elements 
 					++it_os;
-					if (it_os!=waveform.end())
+					if (it_os!=waveform_gr.end())
 						++it_os;
 				}
 			}
 			else
-				block->gradWaveforms[iC-GX] = std::vector<float>(waveform);
+				block->gradWaveforms[iC-GX] = std::vector<float>(waveform_gr);
+
+			block->grDwellTime_us = m_dGradientRasterTime_us;   // ThomasR: Pulseq: Add grDwell
 		}
 	}
 
@@ -1383,10 +1427,11 @@ bool ExternalSequence::decodeExtTrapGradInBlock(SeqBlock *block)
 {
 	int *events = &block->events[0];
 	print_msg(DEBUG_LOW_LEVEL, std::ostringstream().flush() << "Decoding ext gradient in block " << block->index << " events: "
-		<< events[0]+1 << " " << events[1]+1 << " " << events[2]+1 << " "
-		<< events[3]+1 << " " << events[4]+1 );
+		<< events[0] << " " << events[1] << " " << events[2] << " "     // ThomasR: Remove +1 (align with file)
+		<< events[3] << " " << events[4] );
 
 	std::vector<float> waveform;
+    std::vector<float> waveform_t;  // ThomasR: Pulseq: store time seperatly for full unpack
 	block->gradExtTrapForms.clear();
 	block->gradExtTrapForms.resize(NUM_GRADS);
 	// Decode gradients
@@ -1401,13 +1446,13 @@ bool ExternalSequence::decodeExtTrapGradInBlock(SeqBlock *block)
 			//for (int a=0; a<tshape.samples.size(); ++a) {
 			//	print_msg(DEBUG_LOW_LEVEL, std::ostringstream().flush() << tshape.samples[a] );
 			//}
-			waveform.resize(tshape.numUncompressedSamples);
-			if (!decompressShape(tshape,&waveform[0])) return false;
+			waveform_t.resize(tshape.numUncompressedSamples);
+			if (!decompressShape(tshape,&waveform_t[0])) return false;
 			print_msg(DEBUG_LOW_LEVEL, std::ostringstream().flush() << "Time shape uncompressed to " << tshape.numUncompressedSamples << " samples" );
 			//block->gradExtTrapForms[iC-GX].first = std::vector<float>(waveform); 
-			block->gradExtTrapForms[iC-GX].first.resize(waveform.size());
-			for (int i=0;i<waveform.size();++i)
-				block->gradExtTrapForms[iC-GX].first[i]=long(0.5+m_dGradientRasterTime_us*waveform[i]); // convert to long usec from grad rasters 
+			block->gradExtTrapForms[iC-GX].first.resize(waveform_t.size());
+			for (int i=0;i<waveform_t.size();++i)
+				block->gradExtTrapForms[iC-GX].first[i]=long(0.5+m_dGradientRasterTime_us*waveform_t[i]); // convert to long usec from grad rasters 
 			// now wave amplitude shape
 			CompressedShape& wshape = m_shapeLibrary[block->grad[iC-GX].waveShape];
 			print_msg(DEBUG_LOW_LEVEL, std::ostringstream().flush() << "Loaded wave shape " << block->grad[iC-GX].waveShape << " with " << wshape.samples.size() << " compressed samples" );
@@ -1419,6 +1464,9 @@ bool ExternalSequence::decodeExtTrapGradInBlock(SeqBlock *block)
 				print_msg(ERROR_MSG, std::ostringstream().flush() << "ERROR: uncompressed extended trapezoid time and wave shape lengths do not match" );
 				return false;
 			}
+
+            block->grDwellTime_us = m_dGradientRasterTime_us;   // ThomasR: Pulseq: Add grDwell
+
 		}
 	}
 	return true;
@@ -1478,7 +1526,7 @@ bool ExternalSequence::decompressShape(CompressedShape& encoded, float *shape)
 bool ExternalSequence::checkBlockReferences(EventIDs& events)
 {
 	bool error;
-	error = (events.id[RF]>0    && m_rfLibrary.count(events.id[RF])==0);
+	error = (events.id[RFp]>0    && m_rfLibrary.count(events.id[RFp])==0);
 	error|= (events.id[GX]>0    && m_gradLibrary.count(events.id[GX])==0);
 	error|= (events.id[GY]>0    && m_gradLibrary.count(events.id[GY])==0);
 	error|= (events.id[GZ]>0    && m_gradLibrary.count(events.id[GZ])==0);
@@ -1509,13 +1557,17 @@ void ExternalSequence::checkGradient(SeqBlock& block)
 /***********************************************************/
 void ExternalSequence::checkRF(SeqBlock& block)
 {
-	for (unsigned int i=0; i<block.rfAmplitude.size(); i++)
-	{
-		if (block.rfAmplitude[i]>1.0) block.rfAmplitude[i]=1.0;
-		if (block.rfAmplitude[i]<0.0) block.rfAmplitude[i]=0.0;
-		if (block.rfPhase[i]>TWO_PI-1.e-4) block.rfPhase[i]=(float)(TWO_PI-1.e-4);
-		if (block.rfPhase[i]<0) block.rfPhase[i]=0.0;
+    // ThomasR: PTX Pulseq - START
+	for (unsigned int cur_tx = 0; cur_tx < block.rfAmplitude.size(); cur_tx++) {
+		for (unsigned int i=0; i<block.rfAmplitude[cur_tx].size(); i++)
+		{
+			if (block.rfAmplitude[cur_tx][i]>1.0) block.rfAmplitude[cur_tx][i]=1.0;
+			if (block.rfAmplitude[cur_tx][i]<0.0) block.rfAmplitude[cur_tx][i]=0.0;
+			if (block.rfPhase[cur_tx][i]>TWO_PI-1.e-4) block.rfPhase[cur_tx][i]=(float)(TWO_PI-1.e-4);
+			if (block.rfPhase[cur_tx][i]<0) block.rfPhase[cur_tx][i]=0.0;
+		}
 	}
+    // ThomasR: PTX Pulseq - END
 }
 
 
