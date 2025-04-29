@@ -98,7 +98,7 @@ bool ExternalSequence::load(std::string path)
 
 	// Try single file mode (everything in a single .seq file)
 	std::ifstream data_file;
-	bool isSingleFileMode = true;
+	//bool isSingleFileMode = true;		// ThomasR: Fix unused variable
 	std::string filepath = path;
 	if (filepath.substr(filepath.size()-4) != std::string(".seq")) {
 		filepath = path + PATH_SEPARATOR + "external.seq";
@@ -711,9 +711,11 @@ bool ExternalSequence::load(std::istream& data_stream, load_mode loadMode /*=lm_
 			// Read each definition line
 			m_definitions.clear();
 			m_definitions_str.clear();
-			int retgl=0;
-			while (retgl=getline(data_stream, buffer, MAX_LINE_SIZE)) {
-				if (buffer[0]=='[' || strlen(buffer)==0) {
+			int retgl;
+			while (true) {	// ThomasR: Fix compiler warning (treated as error)
+				retgl = getline(data_stream, buffer, MAX_LINE_SIZE);
+
+				if (retgl==gl_false || buffer[0]=='[' || strlen(buffer)==0) {
 					break;
 				}
 				// this was not compatible with Numaris4 VB line (MSVC6)
@@ -1375,13 +1377,13 @@ bool ExternalSequence::decodeBlock(SeqBlock *block)
 			print_msg(DEBUG_LOW_LEVEL, std::ostringstream().flush() << "Shape uncompressed to "
 				<< shape.numUncompressedSamples << " samples" );
 
-			if (fabs(m_dGradientRasterTime_us-10)>1e-3)
-			{
-				print_msg(DEBUG_LOW_LEVEL, std::ostringstream().flush() << "Shape is on a raster that is different from the system raster, exitting... (will try resampling in the future versions...)" );
-				// TODO: !!!
-				// PROBLEM: we need 'first' and 'last' to be able to interpolate correctly...
-				return false;
-			}
+			//if (fabs(m_dGradientRasterTime_us-10)>1e-3)
+			//{
+			//	print_msg(DEBUG_LOW_LEVEL, std::ostringstream().flush() << "Shape is on a raster that is different from the system raster, exitting... (will try resampling in the future versions...)" );
+			//	// TODO: !!!
+			//	// PROBLEM: we need 'first' and 'last' to be able to interpolate correctly...
+			//	return false;
+			//}
 
 			if (block->isArbGradWithOversampling(iC-GX))	// oversampling?
 			{
@@ -1678,7 +1680,7 @@ int ExternalSequence::decodeLabel(ExtType exttype, int& nVal, char* szLabelID, L
 	
 	//assemble LabelEvent
 	if (nKnownFG !=FLAG_UNKNOWN){
-		label.flagVal=std::make_pair(nKnownFG,bool(nVal));
+		label.flagVal=std::make_pair(nKnownFG,static_cast<bool> (nVal>0));
 		label.numVal=std::make_pair(nKnownLBL,0);
 	}else if (nKnownLBL !=LABEL_UNKNOWN){
 		label.flagVal=std::make_pair(nKnownFG,false);
@@ -1836,7 +1838,7 @@ void LabelStateAndBookkeeping::updateLabelValues(SeqBlock* pBlock)
     // update m_currLabelValueStorage according to labelinc/labelset from the block
     // for each block, we first check labelset then labelinc, which means labelinc will affect labelset, not the other
     // way around.
-    static const char*      ptModule     = {"ARBITRARY_SBB::updateLabelValueStorage"};
+    //static const char*      ptModule     = {"ARBITRARY_SBB::updateLabelValueStorage"};	// ThomasR: Fix unused variable
     std::vector<LabelEvent> Tmp_labelset = pBlock->GetLabelSetEvents();
     int                     id;
     m_currLabelValueStorage.flag.bValUpdated.assign(NUM_FLAGS, false);
@@ -1937,10 +1939,10 @@ bool LabelStateAndBookkeeping::checkLabelValuesADC()
 }
 
 // some older compilers (or environments) do not know vec.cbegin()...
-#if defined(VXWORKS) || (defined(_MSC_VER) && _MSC_VER<=1600) || (defined(__GNUC__) && (__GNUC__<4 || (__GNUC__==4 && __GNUC_MINOR__<=6)))
+#if defined(VXWORKS) || defined(OS_VXWORKS) || (defined(_MSC_VER) && _MSC_VER<=1600) || (defined(__GNUC__) && (__GNUC__<4 || (__GNUC__==4 && __GNUC_MINOR__<=6)))
 #define cbegin begin
 #define cend end 
-#endif //VXWORKS //_MSC_VER //__GNUC__
+#endif //VXWORKS //OS_VXWORKS //_MSC_VER //__GNUC__
 
 std::string vec2str(const std::vector<int>& vec) 
 {
@@ -2128,7 +2130,7 @@ void LabelStateAndBookkeeping::dump_internal(const std::vector<int>& numVal, con
     else
     {
         int nLen = strlen(szMsg);
-        szSpe0  = new (char[nLen + 1]);
+        szSpe0  = new char[nLen + 1];
         memset(szSpe0, ' ', nLen);
         szSpe0[nLen] = '\0';
         szSpe = szSpe0;
