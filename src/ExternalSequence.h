@@ -1,12 +1,11 @@
 /** @file ExternalSequence.h */
 
 #include <vector>
-#include <iostream>
 #include <string>
-#include <sstream>
-#include <fstream>
 #include <set>
 #include <map>
+#include <utility> 		// for std::pair
+#include <iosfwd>		// for std::istream, std::ostream
 //#include <limits>	    // for std::numeric_limits<...>::quiet_NaN()
 
 #ifndef _EXTERNAL_SEQUENCE_H_
@@ -125,7 +124,7 @@ struct GradEvent
 	float last;           /**< @brief amplitude at the end of the shape for arbitrary gradient */
 };
 
-#define FLOAT_UNDEFINED 1.18e-38f
+#define FLOAT_UNDEFINED static_cast<float> (1.18e-38f)
 
 /**
  * @brief ADC readout event
