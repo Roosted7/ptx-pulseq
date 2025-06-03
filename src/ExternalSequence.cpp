@@ -21,6 +21,7 @@ extern "C" {
 #endif
 
 ExternalSequence::PrintFunPtr ExternalSequence::print_fun = &ExternalSequence::defaultPrint;
+ExternalSequence::PrintFunPtr ExternalSequence::print_error_fun = &ExternalSequence::defaultPrintError;
 const int ExternalSequence::MAX_LINE_SIZE = 256;
 const char ExternalSequence::COMMENT_CHAR = '#';
 std::string& str_trim(std::string& str);
@@ -52,6 +53,9 @@ void ExternalSequence::print_msg(MessageType level, std::ostream& ss) {
 		std::ostringstream oss;
 		oss.width(2*(level-1)); oss << "";
 		oss << static_cast<std::ostringstream&>(ss).str();
+		if (WARNING_MSG>=level)
+			print_error_fun(oss.str().c_str());
+		else
 		print_fun(oss.str().c_str());
 #endif
 	}

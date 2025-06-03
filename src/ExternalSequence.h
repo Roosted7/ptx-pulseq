@@ -876,6 +876,16 @@ class ExternalSequence
 	static void SetPrintFunction(PrintFunPtr fun);
 
 	/**
+	 * @brief Set the error output print function
+	 *
+	 * Set the low-level output function to be used for printing or logging messages.
+	 * If no function is specified messages will be printed to cout
+	 *
+	 * @param  fun  Pointer to function
+	 */
+	static void SetPrintErrorFunction(PrintFunPtr fun);
+
+	/**
 	 * @brief Lookup the custom definition
 	 *
 	 * Search the list of user-specified definitions through the [DEFINITIONS] section.
@@ -1061,9 +1071,15 @@ class ExternalSequence
 	 */
 	static void defaultPrint(const std::string &str);
 
+	/**
+	 * @brief Print string to standard error (with newline character)
+	 */
+	static void defaultPrintError(const std::string &str);
+
 	// *** Static members ***
 
 	static PrintFunPtr print_fun;              /**< @brief Pointer to output print function */
+	static PrintFunPtr print_error_fun;              /**< @brief Pointer to output print function */
 
 	// *** Members ***
 
@@ -1142,7 +1158,9 @@ inline std::string	ExternalSequence::GetDefinitionStr(std::string key){
 }
 
 inline void ExternalSequence::defaultPrint(const std::string &str) { OSLOG_info(NULL, "+Pulseq: %s", str.c_str()); }
+inline void ExternalSequence::defaultPrintError(const std::string &str) { OSLOG_error(NULL, "+Pulseq: %s", str.c_str()); }
 inline void ExternalSequence::SetPrintFunction(PrintFunPtr fun) { print_fun=fun; }
+inline void ExternalSequence::SetPrintErrorFunction(PrintFunPtr fun) { print_error_fun=fun; }
 
 inline bool ExternalSequence::isSigned() { return m_bSignatureDefined; }
 inline std::string ExternalSequence::getSignature() { return m_strSignature; }
