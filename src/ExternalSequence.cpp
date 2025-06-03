@@ -3,16 +3,22 @@ extern "C" {
 	#include "md5.h"
 }
 
-#include <stdio.h>		// sscanf
+#include <sstream>		// std::ostringstream, std::istringstream
+#include <fstream>		// std::ifstream
+#include <cstdio>		// sscanf
 #include <cstring>		// strlen etc
 #include <iomanip>		// std::setw etc
+#include <algorithm>	// std::max_element
+#include <functional>	// std::bind...
+#include <cmath>		// std::ceil and std::floor
+#include <cassert>		// assert
 
-#include <algorithm>	// for std::max_element
-#include <functional>	// for std::bind...
 
-#include <math.h>		// fabs etc
-
-#include <assert.h>		// assert (TODO: remove in the released version)
+#ifdef GOAL_HW_H
+#define SYS_GRADRASTER_US (HW->grad_dwell_dur_us)		// ThomasR: Make grad raster / dwell time configurable
+#else
+#define SYS_GRADRASTER_US 10
+#endif
 
 ExternalSequence::PrintFunPtr ExternalSequence::print_fun = &ExternalSequence::defaultPrint;
 const int ExternalSequence::MAX_LINE_SIZE = 256;
