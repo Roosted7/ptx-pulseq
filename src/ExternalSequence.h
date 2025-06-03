@@ -409,6 +409,7 @@ public:
 	 */
 	SeqBlock() { 
 		gradWaveforms.resize(NUM_GRADS);
+		gradWaveformsDuration_us.resize(NUM_GRADS);
 		gradExtTrapForms.resize(NUM_GRADS);
 	}
 
@@ -515,6 +516,11 @@ public:
 	 * @brief Get dwell time for the arbitrary gradient waveform (in us)
 	 */
 	float GetArbGradDwellTime();
+
+	/**
+	 * @brief Get duration of arbitrary gradient waveform (in us)
+	 */
+	double GetArbGradDuration(int channel);
 	// ThomasR: Pulseq - END
 
 	/**
@@ -656,6 +662,7 @@ protected:
 	// Gradient waveforms
 	std::vector< std::vector<float> > gradWaveforms;    /**< @brief Arbitrary gradient shapes for each channel (uncompressed) */
 	float grDwellTime_us; /**< @brief dwell time of the arbitrary gradient shapes (in us) */	// ThomasR: Pulseq Add grDwell
+	std::vector<double> gradWaveformsDuration_us; /**< @brief duration of the arbitrary gradient shapes (in us) */	// ThomasR: Pulseq Add grWaveformsDuration
 
 	// ExtTrap waveforms
 	std::vector< std::pair< std::vector< long >, std::vector< float > > > gradExtTrapForms;    /**< @brief ExtTrap gradient shapes for each channel (uncompressed) */
@@ -721,6 +728,7 @@ inline std::string SeqBlock::GetTypeString() {
 inline float*    SeqBlock::GetArbGradShapePtr(int channel) { return (gradWaveforms[channel].size()>0) ? &gradWaveforms[channel][0] : NULL; }
 inline int       SeqBlock::GetArbGradNumSamples(int channel) {	return gradWaveforms[channel].size(); }
 inline float     SeqBlock::GetArbGradDwellTime() { return grDwellTime_us; }		// ThomasR: Pulseq Add grDwell
+inline double 	 SeqBlock::GetArbGradDuration(int channel) { return gradWaveformsDuration_us[channel]; }	// ThomasR: Pulseq Add gradWaveformsDuration
 
 inline const std::vector<long>&  SeqBlock::GetExtTrapGradTimes(int channel) { return gradExtTrapForms[channel].first; }
 inline const std::vector<float>& SeqBlock::GetExtTrapGradShape(int channel) { return gradExtTrapForms[channel].second; }
@@ -951,6 +959,14 @@ class ExternalSequence
 	 */
 	bool decodeExtTrapGradInBlock(SeqBlock *block);
 
+	/**
+	 * @brief Resample the gradient waveform to a new raster time
+	 *
+	 * This resamples a gradient waveform from the source raster time (including any oversampling) to the target raster time.
+	 *
+	 * @return true if successful
+	 */
+	std::vector<float> resampleGradientWaveform(const std::vector<float>& orig_wf, double seq_dt_us, double sys_dt_us, bool edge_samples=false);
 	/**
 	 * @brief Return `true` if block has a gradient which starts at a non-zero value on given channel (only possible for arbitrary or ExtTrap gradients)
 	 */

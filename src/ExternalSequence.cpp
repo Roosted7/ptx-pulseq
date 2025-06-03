@@ -56,7 +56,7 @@ void ExternalSequence::print_msg(MessageType level, std::ostream& ss) {
 		if (WARNING_MSG>=level)
 			print_error_fun(oss.str().c_str());
 		else
-		print_fun(oss.str().c_str());
+			print_fun(oss.str().c_str());
 #endif
 	}
 }
@@ -1240,6 +1240,53 @@ SeqBlock*	ExternalSequence::GetBlock(int index) {
 	return block;
 }
 
+// integral of piece-wise linear wf from t=0 to t (clamped to [0,dur])
+static double integral_at(double t, const std::vector<double>& pref, const std::vector<float>& wf, double seq_dt_us, double dur_us) {
+    if (t <= 0.0)           return 0.0;      		// Before start
+    if (t >= dur_us)        return pref.back(); 	// After end
+    const size_t idx	= static_cast<size_t>(t / seq_dt_us);      	// which constant‐bin?
+    const double dt		= t - static_cast<double>(idx) * seq_dt_us; // offset inside that bin
+	const double slope	= (wf[idx+1] - wf[idx]) / seq_dt_us; 		// slope on this segment
+    return pref[idx] + wf[idx] * dt + 0.5*slope*dt*dt;         		// integral from x_k to x_k+dt of (wf_k + slope * tau) dtau
+}
+
+/***********************************************************/
+// Function to resample the gradient waveform (use double for input times for precision)
+std::vector<float> ExternalSequence::resampleGradientWaveform(const std::vector<float>& orig_wf, double seq_dt_us, double sys_dt_us, bool edge_samples) {
+	// Return empty waveform if input is empty or invalid
+	if (orig_wf.empty() || seq_dt_us <= 0.0 || sys_dt_us <= 0.0) {
+		return std::vector<float>();
+	}
+
+    const size_t orig_N       = orig_wf.size() - 1;				// # original samples
+    const double orig_dur_us  = static_cast<double>(orig_N) * seq_dt_us;   	// original total dur
+
+    // 1) build prefix‐sum of the piecewise‐constant integral
+    std::vector<double> pref(orig_N + 1);
+    pref[0] = 0.0;   // ∫ up to sample 0
+	for (size_t i = 0; i < orig_N; i++)
+		pref[i+1] = pref[i] + 0.5*seq_dt_us*(static_cast<double>(orig_wf[i]) + static_cast<double>(orig_wf[i+1]));
+
+    // 2) choose M = ceil(orig_dur / sys_dt) so new_dur ≥ orig_dur
+    size_t new_N = static_cast<size_t>(ceil(orig_dur_us / sys_dt_us));
+    if (new_N < 1) new_N = 1;
+
+    // 4) for each bin [a,b) compute ∫orig from a to b, then avg=(I1−I0)/dt
+    std::vector<float> res(new_N + 2);	// +2 for edge samples
+	res[0] = orig_wf[0];	// first sample (edge sample)
+    for (size_t j = 0; j < new_N; ++j) {
+        double a = static_cast<double>(j) * sys_dt_us;						// bin start in orig time
+        double b = MIN(a + sys_dt_us, orig_dur_us);                    		// bin end
+        double I0 = integral_at(a, pref, orig_wf, seq_dt_us, orig_dur_us);
+        double I1 = integral_at(b, pref, orig_wf, seq_dt_us, orig_dur_us);
+        res[j+1] = static_cast<float>( (I1 - I0) / (b - a) );      			// average value, divided by bin width
+    }
+	res[new_N + 1] = orig_wf[orig_N];	// last sample (edge sample)
+
+    return res;
+}
+
+
 /***********************************************************/
 bool ExternalSequence::decodeBlock(SeqBlock *block)
 {
@@ -1387,15 +1434,46 @@ bool ExternalSequence::decodeBlock(SeqBlock *block)
 			print_msg(DEBUG_LOW_LEVEL, std::ostringstream().flush() << "Shape uncompressed to "
 				<< shape.numUncompressedSamples << " samples" );
 
-			//if (fabs(m_dGradientRasterTime_us-10)>1e-3)
-			//{
-			//	print_msg(DEBUG_LOW_LEVEL, std::ostringstream().flush() << "Shape is on a raster that is different from the system raster, exitting... (will try resampling in the future versions...)" );
-			//	// TODO: !!!
-			//	// PROBLEM: we need 'first' and 'last' to be able to interpolate correctly...
-			//	return false;
-			//}
+			if (fabs(m_dGradientRasterTime_us-SYS_GRADRASTER_US)>1e-3)
+			{
+				//print_msg(ERROR_MSG, std::ostringstream().flush() << "Shape is on a raster that is different from the system raster, exitting... (will try resampling in the future versions...)" );
+				// TODO: !!!
+				// PROBLEM: we need 'first' and 'last' to be able to interpolate correctly...
+				//return false;
+				print_msg(WARNING_MSG, std::ostringstream().flush() << "Shape is on a raster that is different from the system raster, should resample..." );
 
-			if (block->isArbGradWithOversampling(iC-GX))	// oversampling?
+				// Determine the oversampling factor, and the effective source raster time
+				const double oversampleFactor = fabs(block->grad[iC-GX].timeShape) + 1.0;		// -1 -> 2x oversampling, -2 -> 3x oversampling, etc
+				double Traster_source_us = m_dGradientRasterTime_us / oversampleFactor;
+
+				// Oversampled gradients can have too few samples (duration is not D1=N1*T1, but D1=(N1+1)*T1), and thus samples on internal edges (will always have first and last sample)
+				const size_t numSamplesMax = static_cast<size_t>(ceil(static_cast<double>(waveform_gr.size()) / oversampleFactor)) * static_cast<size_t>(oversampleFactor);	// round up to next integer
+				bool samplesOnEdges = waveform_gr.size() < numSamplesMax;
+
+				const double inputDuration = static_cast<double>(numSamplesMax) * Traster_source_us;
+				print_msg(DEBUG_MEDIUM_LEVEL, std::ostringstream().flush() << "Resampling gradient waveform: " << waveform_gr.size() << " samples at " << Traster_source_us << " [us] of " << (inputDuration*1e-3) << " [ms] dur");
+				
+				if (samplesOnEdges) {
+					print_msg(DEBUG_LOW_LEVEL, std::ostringstream().flush() << "Gradient waveform has " << waveform_gr.size() << " samples on edges");
+					while ( (waveform_gr.size()+1) < numSamplesMax) {	// This would be odd...
+						print_msg(WARNING_MSG, std::ostringstream().flush() << "WARNING! Gradient waveform has too few samples, repeating last index (" << waveform_gr.back() << ") to fill up to " << (numSamplesMax-1) << " samples" );
+						waveform_gr.push_back(waveform_gr.back());	// repeat last sample to fill up to numSamplesMax-1
+					}
+				} else {
+					print_msg(DEBUG_LOW_LEVEL, std::ostringstream().flush() << "Gradient waveform has " << waveform_gr.size() << " samples on middle of bins");
+				}
+
+				// Insert edges of first and last bins into start and end of waveform (reoeat if no first and last given)
+				waveform_gr.insert(waveform_gr.begin(), ( (block->grad[iC-GX].first == FLOAT_UNDEFINED) ? waveform_gr.front() : (block->grad[iC-GX].first / block->grad[iC-GX].amplitude) ));
+				waveform_gr.push_back( ( (block->grad[iC-GX].last == FLOAT_UNDEFINED) ? waveform_gr.back() : (block->grad[iC-GX].last / block->grad[iC-GX].amplitude) ) );
+
+				std::vector<float> resampled = resampleGradientWaveform(waveform_gr, Traster_source_us, SYS_GRADRASTER_US, samplesOnEdges);		// Do the resampling!
+				
+				print_msg(DEBUG_HIGH_LEVEL, std::ostringstream().flush() << "Resampled gradient waveform to " << resampled.size() << " samples at " << SYS_GRADRASTER_US << " [us]");
+				block->gradWaveformsDuration_us[iC-GX] = inputDuration;		// Write correct duration to block
+				block->gradWaveforms[iC-GX].swap(resampled);				// Swap the resampled waveform to the block
+			}
+			else if (block->isArbGradWithOversampling(iC-GX))	// oversampling?
 			{
 				block->gradWaveforms[iC-GX] = std::vector<float>((waveform_gr.size()+1)/2);
 				std::vector<float>::iterator it_os=waveform_gr.begin();
@@ -1406,9 +1484,12 @@ bool ExternalSequence::decodeBlock(SeqBlock *block)
 					if (it_os!=waveform_gr.end())
 						++it_os;
 				}
+				block->gradWaveformsDuration_us[iC-GX] = block->gradWaveforms[iC-GX].size() * m_dGradientRasterTime_us;		// Write correct duration to block
 			}
-			else
+			else {
 				block->gradWaveforms[iC-GX] = std::vector<float>(waveform_gr);
+				block->gradWaveformsDuration_us[iC-GX] = block->gradWaveforms[iC-GX].size() * m_dGradientRasterTime_us;		// Write correct duration to block
+			}
 
 			block->grDwellTime_us = m_dGradientRasterTime_us;   // ThomasR: Pulseq: Add grDwell
 		}
