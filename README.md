@@ -34,3 +34,22 @@ System requirements vary depending on which features one intends to use or modif
 
 These are optional and not essential to start using Pulseq.
 
+
+## Building the C++ parser
+To build the command line parser `parsemr` with CMake run:
+```bash
+mkdir build && cd build
+cmake ..
+cmake --build .
+```
+The resulting executable will be placed in `src/` within the build directory.
+
+The legacy Autotools build system is still available and can be used with:
+```bash
+./configure
+make
+```
+Tests for this build can be executed with `make check`.
+
+
+
