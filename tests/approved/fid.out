@@ -1,33 +1,16 @@
-# Reading external sequence files
-#     Building index
-#   decoding VERSION section
-#   buffer: 
-major 1
+Opening /workspace/ptx-pulseq/src/../tests/fid.seq
+The file contains md5 signature cb837669c48fb79459d2b7d56453c696
+Signature check succeeded
+The file contains following definitions:
+AdcRasterTime : 	1e-07
+BlockDurationRaster : 	1e-05
+GradientRasterTime : 	1e-05
+Name : 	fid
+RadiofrequencyRasterTime : 	1e-06
 
-#   major=1
-#   buffer: 
-minor 2
+The sequence contains 64 blocks with the total of
+	 16 RF pulses
+	 16 ADC events
 
-#   minor=2
-#   buffer: 
-revision 1
-
-#   revision=1
-#     Reading shape 1
-#     Shape index 1 has 8 compressed and 130 uncompressed samples
-#     Reading shape 2
-#     Shape index 2 has 3 compressed and 130 uncompressed samples
-# -- SHAPES READ numShapes: 2
-# -- EVENTS READ:  RF: 1 GRAD: 0 ADC: 1 DELAY: 3 CONTROL: 0
-# -- BLOCKS READ: 64
-# ==========================================
-# ===== EXTERNAL SEQUENCE #    0 ===========
-# ==========================================
-Number of blocks:       64
-Number of RF pulses:    16
-Number of GX events:     0
-Number of GY events:     0
-Number of GZ events:     0
-Number of readouts:     16
-Number of Delays:       48
+True total sequence duration: 16375520 us
 

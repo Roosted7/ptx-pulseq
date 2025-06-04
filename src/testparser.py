@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from subprocess import call
+import os
 
 def cmp_lines(path_1, path_2):
     """Compare two files, ignoring line-endings"""
@@ -18,9 +19,10 @@ def main():
     print("Testing parser for open MRI format")
     print("==================================")
 
-    sequences = ['fid','gre','epi_rs']
-    base_dir = '../examples/'
-    approved_dir = '../examples/approved/'
+    sequences = ['fid', 'gre']
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.join(script_dir, '..', 'tests') + '/'
+    approved_dir = os.path.join(base_dir, 'approved/')
     ok = True
 
     for seq in sequences:
