@@ -10,8 +10,12 @@
 #if defined(_MSC_VER) && _MSC_VER<=1600
 typedef unsigned __int32 uint32;
 #else
-#ifdef VXWORKS
+#ifndef _MSC_VER
+//#include <cstdint>
+//#include "types/vxTypes.h" 
+#ifdef VXWORKS      // This is only (needed) for Siemens VxWorks
 #include "types/vxTypes.h" 
+#endif
 #else
 #include <stdint.h>
 #endif

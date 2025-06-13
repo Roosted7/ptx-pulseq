@@ -1,4 +1,6 @@
+#ifdef __cplusplus
 extern "C" {
+#endif
 	#ifdef FREEBSD
 	# include <machine/endian.h>
 	#elif defined(LINUX)
@@ -303,4 +305,6 @@ extern "C" {
 	}
 
 	#endif
+#ifdef __cplusplus
 }
+#endif
