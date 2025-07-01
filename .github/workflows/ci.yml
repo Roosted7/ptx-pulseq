@@ -75,7 +75,15 @@ jobs:
         run: mkdocs build
 
       - name: Run In-Place Optimization Script 🚀
-        run: npm run optimize # This now runs 'node optimize.js'
+        run: |
+          echo "Temporarily moving pre-minified theme CSS to prevent processing errors..."
+          mkdir -p /tmp/css-backup
+          mv site/assets/stylesheets/main.*.min.css /tmp/css-backup/
+          
+          npm run optimize
+          
+          echo "Restoring pre-minified theme CSS..."
+          mv /tmp/css-backup/main.*.min.css site/assets/stylesheets/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
