@@ -1,0 +1,251 @@
+:root  > * {
+  --md-primary-fg-color: #5EB795;        /* pTx-Pulseq teal */
+  --md-primary-fg-color--dark: #4a9579;
+  --md-accent-fg-color: #FFA500;         /* pTx-Pulseq orange */
+  --md-accent-fg-color--transparent: #FFA50020;
+  --md-link-color: #0066CC;              /* Philips blue */
+}
+
+/* Style horizontal rules with accent color */
+.md-typeset hr {
+  border-color: var(--md-accent-fg-color);
+  border-width: 2px;
+}
+
+.md-typeset .grid {
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.md-typeset .center {
+    align-items: center; /* Vertically center items */
+}
+
+
+.md-typeset .scroll pre > code {
+    min-height: 6rem;
+    max-height: 8rem;
+    overflow: auto;
+}
+
+.md-typeset .scroll16 pre > code {
+    min-height: 6rem;
+    max-height: 16rem;
+    overflow: auto;
+}
+
+/* Active tab indicator */
+.md-tabs__item--active {
+  border-bottom: 2px solid var(--md-accent-fg-color);
+}
+
+/* Back to top button */
+.md-top {
+  background-color: var(--md-accent-fg-color);
+  color: var(--md-primary-bg-color);
+}
+
+/* Hero section styles for Pulseq Philips landing page */
+.md-typeset .hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #5EB795 0%, #4a9579 100%);
+  color: white;
+  margin: -2.5rem -1.5rem 3rem -1.5rem;
+  border-radius: 0 0 24px 24px;
+}
+
+/* Full-width hero only on mobile */
+@media (max-width: 768px) {
+  .md-typeset .hero {
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    margin-top: 0rem;
+    width: 100vw;
+    position: relative;
+  }
+}
+
+.md-typeset .hero__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.md-typeset .hero__title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Modifier for grid on hero title */
+.md-typeset .hero__title.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .md-typeset .hero__title.grid {
+    flex-direction: column;
+    gap: 0.2rem;
+    align-items: center;
+  }
+  
+  /* Force center alignment on mobile for all children */
+  .md-typeset .hero__title.grid * {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block;
+  }
+}
+
+
+.md-typeset .hero__logo {
+  height: 4rem;
+  vertical-align: -20%;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  max-width: 100%;
+  object-fit: contain;
+}
+.md-typeset .hero__philips {
+  height: 2.5rem;
+  vertical-align: -5%;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  max-width: 100%;
+  object-fit: contain;
+}
+.md-typeset .hero__text {
+  font-size: 3rem;
+  color: white;
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  .md-typeset .hero__logo {
+    height: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  .md-typeset .hero__philips {
+    height: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  .md-typeset .hero__text {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+  }
+  
+  /* Ensure hero content doesn't overflow on small screens */
+  .md-typeset .hero {
+    padding: 3rem 1rem;
+  }
+}
+
+.md-typeset .hero__subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  color: rgba(255,255,255,0.95);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+.md-typeset .hero__actions {
+  margin-top: 2rem;
+}
+
+.md-typeset .hero__button {
+  background: #FFA500;
+  color: white;
+  margin-right: 1rem;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.md-typeset .hero__button--secondary {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 2px solid rgba(255,255,255,0.5);
+  margin-right: 0;
+}
+@media (max-width: 600px) {
+  .md-typeset .hero__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .md-typeset .hero__button {
+    margin-right: 0;
+    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 320px;
+  }
+  .md-typeset .hero__button--secondary {
+    margin-bottom: 0;
+  }
+}
+
+/* Universal MRI Language title accent and subtitle styles */
+.md-typeset .universal-title {
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.1;
+}
+.md-typeset .universal-title .accent {
+  font-style: italic;
+  color: var(--md-accent-fg-color);
+}
+
+.md-typeset .universal-subtitle {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #666;
+  margin-bottom: 2rem;
+  margin-top: 0 !important;
+  font-weight: 500;
+}
+
+/* Ensure h1 margin does not override our spacing */
+.md-typeset .universal-title h1,
+h1.md-typeset .universal-title {
+  margin-bottom: 0.2em !important;
+}
+
+.md-typeset .project-highlight-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--md-primary-fg-color);
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.md-typeset .project-highlight-subtitle {
+  font-size: 1rem;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+/* Responsive design for project highlight */
+@media (max-width: 768px) {
+  .md-typeset .project-highlight {
+    margin-left: 1rem;
+    padding: 1.2rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+  }
+}

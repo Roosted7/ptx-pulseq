@@ -1,0 +1,93 @@
+name: Build and Deploy Optimized Site
+
+on:
+  push:
+    branches:
+      - master 
+      - main
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          sparse-checkout: |
+            docs
+            mkdocs.yml
+            webpack.config.js
+            package.json
+            optimize.js
+      
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      
+      - name: Setup Python 🐍
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - name: Setup Node.js 🟩
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm' # Cache npm dependencies
+      
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+
+      - name: Cache MkDocs Material Dependencies 🗄️
+        uses: actions/cache@v4
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache 
+          restore-keys: |
+            mkdocs-material-
+      
+      - name: Install Python Dependencies 📦
+        run: pip install mkdocs-material mkdocs-git-revision-date-localized-plugin mkdocs-video mkdocs-glightbox mkdocs-with-pdf mkdocs-material[imaging]
+
+      - name: Install Node.js Dependencies 📦
+        run: npm install
+
+      - name: Build MkDocs Site 🏗️
+        run: mkdocs build
+
+      - name: Run In-Place Optimization Script 🚀
+        run: npm run optimize # This now runs 'node optimize.js'
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site
+    
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Deploy to GitHub Pages 🚀
+      uses: actions/deploy-pages@v4
+      id: deployment

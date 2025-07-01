@@ -35,3 +35,13 @@ doc/*.toc
 matlab/*.seq
 *.swp
 aclocal.m4
+
+# Added for mkdocs and webpack
+node_modules
+.cache
+site
+package-lock.json
+
+# Added for vscode
+.vscode
+

@@ -1,0 +1,4206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="365.478mm"
+   height="232.128mm"
+   viewBox="0 0 1036 658"
+   version="1.2"
+   id="svg370"
+   sodipodi:docname="mpf_newgre_larger.svg"
+   inkscape:version="1.4.1 (93de688d07, 2025-03-30)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview370"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.0474914"
+     inkscape:cx="1267.3135"
+     inkscape:cy="270.16929"
+     inkscape:window-width="3840"
+     inkscape:window-height="2091"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g370" />
+  <title
+     id="title1">SVG export:G:/Temp/mpf.gve</title>
+  <desc
+     id="desc1">Created with the Graphical Viewer for MPF/PDF</desc>
+  <defs
+     id="defs1" />
+  <g
+     fill="none"
+     stroke="black"
+     stroke-width="2.0"
+     fill-rule="evenodd"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     id="g370">
+    <g
+       fill="none"
+       stroke="#c0c0c0"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,0)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g4">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,0 0,132 "
+         id="polyline1" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="235,0 235,132 "
+         id="polyline2" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="542,0 542,132 "
+         id="polyline3" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="849,0 849,132 "
+         id="polyline4" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,0)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g5">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,66 1036,66 "
+         id="polyline5" />
+    </g>
+    <g
+       fill="none"
+       stroke="#ff0000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,0)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g7">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="163,66 164,54 229,54 230,66 "
+         id="polyline6" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="169.34915"
+         y="50.506287"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text6">Trap #5</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="105,66 108,86 123,86 125,66 "
+         id="polyline7" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="88.349152"
+         y="96.506287"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text7">Trap #2</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#ff00ff"
+       stroke-opacity="1"
+       stroke-width="8.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,0)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g8">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="164,66 229,66 "
+         id="polyline8" />
+      <text
+         fill="#ff00ff"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="170.18607"
+         y="86.040253"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text8">ADC #1</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#0000ff"
+       stroke-opacity="1"
+       stroke-width="2"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="translate(-32.908557,11.138281)"
+       font-family="'MS Shell Dlg 2'"
+       font-size="16.25px"
+       font-weight="400"
+       font-style="normal"
+       id="g9">
+      <text
+         fill="#0000ff"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="356"
+         y="9"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text9">Block #5 - #9 (5)</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#ff0000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,0)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g12">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="470,66 471,54 536,54 537,66 "
+         id="polyline9" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="478.47604"
+         y="50"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text10">Trap #5</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="412,66 415,86 430,86 432,66 "
+         id="polyline10" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="397.3743"
+         y="98.025139"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text11">Trap #2</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="235,66 239,32 278,32 282,66 "
+         id="polyline11" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="235.39943"
+         y="28.506285"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text12">Trap #6</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#ff00ff"
+       stroke-opacity="1"
+       stroke-width="8.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,0)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g13">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="471,66 536,66 "
+         id="polyline12" />
+      <text
+         fill="#ff00ff"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="476.11206"
+         y="86.756248"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text13">ADC #2</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#0000ff"
+       stroke-opacity="1"
+       stroke-width="2"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="translate(-32.908557,11.138281)"
+       font-family="'MS Shell Dlg 2'"
+       font-size="16.25px"
+       font-weight="400"
+       font-style="normal"
+       id="g14">
+      <text
+         fill="#0000ff"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="659"
+         y="9"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text14">Block #10 - #14 (5)</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#ff0000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,0)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g17">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="777,66 778,54 843,54 844,66 "
+         id="polyline14" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="784.04407"
+         y="49.284004"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text15">Trap #5</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="719,66 722,86 737,86 739,66 "
+         id="polyline15" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="703.04407"
+         y="98.863983"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text16">Trap #2</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="542,66 546,32 585,32 589,66 "
+         id="polyline16" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="542.98206"
+         y="26.926006"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text17">Trap #6</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#ff00ff"
+       stroke-opacity="1"
+       stroke-width="8.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,0)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g18">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="778,66 843,66 "
+         id="polyline17" />
+      <text
+         fill="#ff00ff"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="782.75409"
+         y="86.398247"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text18">ADC #3</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#0000ff"
+       stroke-opacity="1"
+       stroke-width="2"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="translate(-32.908557,11.138281)"
+       font-family="'MS Shell Dlg 2'"
+       font-size="16.25px"
+       font-weight="400"
+       font-style="normal"
+       id="g19">
+      <text
+         fill="#0000ff"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="966"
+         y="9"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text19">Block #15 - #19 (5)</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#ff0000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,0)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g21">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1026,66 1029,86 1044,86 1046,66 "
+         id="polyline19" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="1015.056"
+         y="99.221985"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text20">Trap #2</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="849,66 853,32 892,32 896,66 "
+         id="polyline20" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="851.41406"
+         y="27.284004"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text21">Trap #6</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,0)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g54">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="8,64 8,68 "
+         id="polyline21" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="49,64 49,68 "
+         id="polyline22" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="89,64 89,68 "
+         id="polyline23" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="129,64 129,68 "
+         id="polyline24" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="170,64 170,68 "
+         id="polyline25" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="210,64 210,68 "
+         id="polyline26" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="250,64 250,68 "
+         id="polyline27" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="290,64 290,68 "
+         id="polyline28" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="331,64 331,68 "
+         id="polyline29" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="371,64 371,68 "
+         id="polyline30" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="411,64 411,68 "
+         id="polyline31" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="452,64 452,68 "
+         id="polyline32" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="492,64 492,68 "
+         id="polyline33" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="532,64 532,68 "
+         id="polyline34" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="573,64 573,68 "
+         id="polyline35" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="613,64 613,68 "
+         id="polyline36" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="653,64 653,68 "
+         id="polyline37" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="694,64 694,68 "
+         id="polyline38" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="734,64 734,68 "
+         id="polyline39" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="774,64 774,68 "
+         id="polyline40" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="814,64 814,68 "
+         id="polyline41" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="855,64 855,68 "
+         id="polyline42" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="895,64 895,68 "
+         id="polyline43" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="935,64 935,68 "
+         id="polyline44" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="976,64 976,68 "
+         id="polyline45" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1016,64 1016,68 "
+         id="polyline46" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,6 4,6 "
+         id="polyline47" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="16.918936"
+         y="11.863983"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text47">40</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,21 4,21 "
+         id="polyline48" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="16.918936"
+         y="26.863983"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text48">30</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,36 4,36 "
+         id="polyline49" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="16.918936"
+         y="41.863983"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text49">20</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,51 4,51 "
+         id="polyline50" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="16.918936"
+         y="56.863983"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text50">10</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,81 4,81 "
+         id="polyline51" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="10.474974"
+         y="86.326988"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text51">-10</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,96 4,96 "
+         id="polyline52" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="10.474974"
+         y="101.32699"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text52">-20</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,111 4,111 "
+         id="polyline53" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="10.474974"
+         y="116.32699"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text53">-30</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-dasharray="1,2"
+       stroke-dashoffset="0"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,0)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g55">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="8,0 8,132 "
+         id="polyline55" />
+    </g>
+    <g
+       fill="none"
+       stroke="#c0c0c0"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,132)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g59">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,0 0,131 "
+         id="polyline56" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="235,0 235,131 "
+         id="polyline57" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="542,0 542,131 "
+         id="polyline58" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="849,0 849,131 "
+         id="polyline59" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,132)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g60">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,65 1036,65 "
+         id="polyline60" />
+    </g>
+    <g
+       fill="none"
+       stroke="#ff0000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,132)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g67">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="105,65 108,91 123,91 125,65 "
+         id="polyline61" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="86.180084"
+         y="105.65398"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text61">Trap #3</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="412,65 414,91 430,91 432,65 "
+         id="polyline62" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="393.18008"
+         y="105.65398"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text62">Trap #9</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="235,65 237,38 253,38 255,65 "
+         id="polyline63" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="239.09195"
+         y="31.136017"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text63">Trap #7</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="719,65 721,90 737,90 739,65 "
+         id="polyline64" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="698.18005"
+         y="104.65398"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text64">Trap #11</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="542,65 544,38 560,38 562,65 "
+         id="polyline65" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="544.09192"
+         y="31.136017"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text65">Trap #10</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1026,65 1028,90 1044,90 1046,65 "
+         id="polyline66" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="1005.1801"
+         y="104.65398"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text66">Trap #13</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="849,65 851,39 867,39 869,65 "
+         id="polyline67" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="851.09192"
+         y="32.136017"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text67">Trap #12</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,132)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g99">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="8,63 8,67 "
+         id="polyline68" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="49,63 49,67 "
+         id="polyline69" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="30.402065"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text69">4268</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="89,63 89,67 "
+         id="polyline70" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="70.402061"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text70">4270</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="129,63 129,67 "
+         id="polyline71" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="110.40206"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text71">4272</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="170,63 170,67 "
+         id="polyline72" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="151.40207"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text72">4274</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="210,63 210,67 "
+         id="polyline73" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="191.40207"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text73">4276</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="250,63 250,67 "
+         id="polyline74" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="231.40207"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text74">4278</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="290,63 290,67 "
+         id="polyline75" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="271.40207"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text75">4280</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="331,63 331,67 "
+         id="polyline76" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="312.40207"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text76">4282</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="371,63 371,67 "
+         id="polyline77" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="352.40207"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text77">4284</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="411,63 411,67 "
+         id="polyline78" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="392.40207"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text78">4286</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="452,63 452,67 "
+         id="polyline79" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="433.40207"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text79">4288</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="492,63 492,67 "
+         id="polyline80" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="473.40207"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text80">4290</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="532,63 532,67 "
+         id="polyline81" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="513.40204"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text81">4292</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="573,63 573,67 "
+         id="polyline82" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="554.40204"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text82">4294</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="613,63 613,67 "
+         id="polyline83" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="594.40204"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text83">4296</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="653,63 653,67 "
+         id="polyline84" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="634.40204"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text84">4298</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="694,63 694,67 "
+         id="polyline85" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="675.40204"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text85">4300</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="734,63 734,67 "
+         id="polyline86" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="715.40204"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text86">4302</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="774,63 774,67 "
+         id="polyline87" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="755.40204"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text87">4304</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="814,63 814,67 "
+         id="polyline88" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="795.40204"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text88">4306</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="855,63 855,67 "
+         id="polyline89" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="836.40204"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text89">4308</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="895,63 895,67 "
+         id="polyline90" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="876.40204"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text90">4310</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="935,63 935,67 "
+         id="polyline91" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="916.40204"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text91">4312</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="976,63 976,67 "
+         id="polyline92" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="957.40204"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text92">4314</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1016,63 1016,67 "
+         id="polyline93" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="997.40204"
+         y="347.00443"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text93">4316</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,5 4,5 "
+         id="polyline94" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="15.307945"
+         y="10.147987"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text94">30</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,25 4,25 "
+         id="polyline95" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="15.307945"
+         y="30.147987"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text95">20</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,45 4,45 "
+         id="polyline96" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="15.307945"
+         y="50.147987"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text96">10</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,85 4,85 "
+         id="polyline97" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="10.295975"
+         y="89.789993"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text97">-10</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,105 4,105 "
+         id="polyline98" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="10.295975"
+         y="109.78999"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text98">-20</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,125 4,125 "
+         id="polyline99" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-dasharray="1,2"
+       stroke-dashoffset="0"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,132)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g100">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="8,0 8,131 "
+         id="polyline100" />
+    </g>
+    <g
+       fill="none"
+       stroke="#c0c0c0"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,263)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g104">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,0 0,132 "
+         id="polyline101" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="235,0 235,132 "
+         id="polyline102" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="542,0 542,132 "
+         id="polyline103" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="849,0 849,132 "
+         id="polyline104" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,263)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g105">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,66 1036,66 "
+         id="polyline105" />
+    </g>
+    <g
+       fill="none"
+       stroke="#ff0000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,263)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g107">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="105,66 109,113 122,113 125,66 "
+         id="polyline106" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="100.5"
+         y="123"
+         font-family="MS Shell Dlg 2"
+         font-size="16.25"
+         font-weight="400"
+         font-style="normal"
+         id="text106">Trap #4</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="41,66 43,40 103,40 105,66 "
+         id="polyline107" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="47.402065"
+         y="33.852013"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text107">Trap #1</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#00ff00"
+       stroke-opacity="1"
+       stroke-width="8.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,263)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g108">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="43,66 103,66 "
+         id="polyline108" />
+      <text
+         fill="#00ff00"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="52.334057"
+         y="157.63983"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text108">RF #1</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#ff0000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,263)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g111">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="412,66 416,113 429,113 432,66 "
+         id="polyline109" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="407.5"
+         y="123"
+         font-family="MS Shell Dlg 2"
+         font-size="16.25"
+         font-weight="400"
+         font-style="normal"
+         id="text109">Trap #4</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="348,66 350,40 410,40 412,66 "
+         id="polyline110" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="355.83405"
+         y="34.568008"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text110">Trap #1</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="235,66 239,13 264,13 268,66 "
+         id="polyline111" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="239.006"
+         y="6.8520126"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text111">Trap #8</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#00ff00"
+       stroke-opacity="1"
+       stroke-width="8.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,263)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g112">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="350,66 410,66 "
+         id="polyline112" />
+      <text
+         fill="#00ff00"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="355.75409"
+         y="157.99783"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text112">RF #2</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#ff0000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,263)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g115">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="719,66 723,113 736,113 739,66 "
+         id="polyline113" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="714.5"
+         y="123"
+         font-family="MS Shell Dlg 2"
+         font-size="16.25"
+         font-weight="400"
+         font-style="normal"
+         id="text113">Trap #4</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="655,66 657,40 717,40 719,66 "
+         id="polyline114" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="659.61206"
+         y="35.284004"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text114">Trap #1</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="542,66 546,13 571,13 575,66 "
+         id="polyline115" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="544.216"
+         y="8.2840042"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text115">Trap #8</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#00ff00"
+       stroke-opacity="1"
+       stroke-width="8.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,263)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g116">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="657,66 717,66 "
+         id="polyline116" />
+      <text
+         fill="#00ff00"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="663.11206"
+         y="158.35583"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text116">RF #3</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#ff0000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,263)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g119">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1026,66 1030,113 1043,113 1046,66 "
+         id="polyline117" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="1012.908"
+         y="128.36998"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text117">Trap #4</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="962,66 964,40 1024,40 1026,66 "
+         id="polyline118" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="965.53809"
+         y="34.926006"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text118">Trap #1</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="849,66 853,13 878,13 881,66 "
+         id="polyline119" />
+      <text
+         fill="#ff0000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="850.85797"
+         y="7.9260063"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text119">Trap #8</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#00ff00"
+       stroke-opacity="1"
+       stroke-width="8.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,263)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g120">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="964,66 1024,66 "
+         id="polyline120" />
+      <text
+         fill="#00ff00"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="968.32208"
+         y="158.35583"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text120">RF #4</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,263)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g152">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="8,64 8,68 "
+         id="polyline121" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="49,64 49,68 "
+         id="polyline122" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="89,64 89,68 "
+         id="polyline123" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="129,64 129,68 "
+         id="polyline124" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="170,64 170,68 "
+         id="polyline125" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="210,64 210,68 "
+         id="polyline126" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="250,64 250,68 "
+         id="polyline127" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="290,64 290,68 "
+         id="polyline128" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="331,64 331,68 "
+         id="polyline129" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="371,64 371,68 "
+         id="polyline130" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="411,64 411,68 "
+         id="polyline131" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="452,64 452,68 "
+         id="polyline132" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="492,64 492,68 "
+         id="polyline133" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="532,64 532,68 "
+         id="polyline134" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="573,64 573,68 "
+         id="polyline135" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="613,64 613,68 "
+         id="polyline136" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="653,64 653,68 "
+         id="polyline137" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="694,64 694,68 "
+         id="polyline138" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="734,64 734,68 "
+         id="polyline139" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="774,64 774,68 "
+         id="polyline140" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="814,64 814,68 "
+         id="polyline141" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="855,64 855,68 "
+         id="polyline142" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="895,64 895,68 "
+         id="polyline143" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="935,64 935,68 "
+         id="polyline144" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="976,64 976,68 "
+         id="polyline145" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1016,64 1016,68 "
+         id="polyline146" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,-6 4,-6 "
+         id="polyline147" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="15.307945"
+         y="-0.85201257"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text147">30</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,18 4,18 "
+         id="polyline148" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="15.307945"
+         y="23.147987"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text148">20</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,42 4,42 "
+         id="polyline149" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="15.307945"
+         y="47.147987"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text149">10</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,90 4,90 "
+         id="polyline150" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="9.7589779"
+         y="94.968987"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text150">-10</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,114 4,114 "
+         id="polyline151" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="9.7589779"
+         y="118.96899"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text151">-20</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,138 4,138 "
+         id="polyline152" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="9.7589779"
+         y="142.96899"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text152">-30</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-dasharray="1,2"
+       stroke-dashoffset="0"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,263)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g153">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="8,0 8,132 "
+         id="polyline153" />
+    </g>
+    <g
+       fill="none"
+       stroke="#c0c0c0"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,395)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g157">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,0 0,131 "
+         id="polyline154" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="235,0 235,131 "
+         id="polyline155" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="542,0 542,131 "
+         id="polyline156" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="849,0 849,131 "
+         id="polyline157" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,395)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g158">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,65 1036,65 "
+         id="polyline158" />
+    </g>
+    <g
+       fill="none"
+       stroke="#00ff00"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,395)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g162">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="43,65 43,65 45,64 44,64 46,64 47,64 47,63 49,63 50,63 50,62 55,62 55,63 57,63 57,64 58,64 58,63 59,63 59,61 60,61 60,59 61,59 61,57 62,57 62,54 63,54 63,51 64,51 64,48 65,48 65,45 66,45 66,42 67,42 67,39 68,39 68,36 69,36 69,34 70,34 70,33 71,33 71,31 74,31 74,32 75,32 75,33 76,33 76,35 77,35 77,38 78,38 78,40 79,40 79,43 80,43 80,46 81,46 81,50 82,50 82,53 83,53 83,56 84,56 84,58 85,58 85,60 86,60 86,62 87,62 87,64 88,64 89,64 89,63 90,63 90,62 95,62 95,63 99,63 99,64 103,64 104,65 "
+         id="polyline159" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="350,65 350,65 352,64 351,64 353,64 354,64 354,63 356,63 357,63 357,62 362,62 362,63 364,63 364,64 365,64 365,63 366,63 366,61 367,61 367,59 368,59 368,57 369,57 369,54 370,54 370,51 371,51 371,48 372,48 372,45 373,45 373,42 374,42 374,39 375,39 375,36 376,36 376,34 377,34 377,33 378,33 378,31 381,31 381,32 382,32 382,33 383,33 383,35 384,35 384,38 385,38 385,40 386,40 386,43 387,43 387,46 388,46 388,50 389,50 389,53 390,53 390,56 391,56 391,58 392,58 392,60 393,60 393,62 394,62 394,64 395,64 396,64 396,63 397,63 397,62 402,62 402,63 406,63 406,64 410,64 411,65 "
+         id="polyline160" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="657,65 657,65 659,64 658,64 660,64 661,64 661,63 663,63 664,63 664,62 669,62 669,63 671,63 671,64 672,64 672,63 673,63 673,61 674,61 674,59 675,59 675,57 676,57 676,54 677,54 677,51 678,51 678,48 679,48 679,45 680,45 680,42 681,42 681,39 682,39 682,36 683,36 683,34 684,34 684,33 685,33 685,31 688,31 688,32 689,32 689,33 690,33 690,35 691,35 691,38 692,38 692,40 693,40 693,43 694,43 694,46 695,46 695,50 696,50 696,53 697,53 697,56 698,56 698,58 699,58 699,60 700,60 700,62 701,62 701,64 702,64 703,64 703,63 704,63 704,62 709,62 709,63 713,63 713,64 717,64 718,65 "
+         id="polyline161" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="964,65 964,65 966,64 965,64 967,64 968,64 968,63 970,63 971,63 971,62 976,62 976,63 978,63 978,64 979,64 979,63 980,63 980,61 981,61 981,59 982,59 982,57 983,57 983,54 984,54 984,51 985,51 985,48 986,48 986,45 987,45 987,42 988,42 988,39 989,39 989,36 990,36 990,34 991,34 991,33 992,33 992,31 995,31 995,32 996,32 996,33 997,33 997,35 998,35 998,38 999,38 999,40 1000,40 1000,43 1001,43 1001,46 1002,46 1002,50 1003,50 1003,53 1004,53 1004,56 1005,56 1005,58 1006,58 1006,60 1007,60 1007,62 1008,62 1008,64 1009,64 1010,64 1010,63 1011,63 1011,62 1016,62 1016,63 1020,63 1020,64 1024,64 1025,65 "
+         id="polyline162" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,395)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g196">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="8,63 8,67 "
+         id="polyline163" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="49,63 49,67 "
+         id="polyline164" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="89,63 89,67 "
+         id="polyline165" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="129,63 129,67 "
+         id="polyline166" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="170,63 170,67 "
+         id="polyline167" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="210,63 210,67 "
+         id="polyline168" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="250,63 250,67 "
+         id="polyline169" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="290,63 290,67 "
+         id="polyline170" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="331,63 331,67 "
+         id="polyline171" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="371,63 371,67 "
+         id="polyline172" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="411,63 411,67 "
+         id="polyline173" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="452,63 452,67 "
+         id="polyline174" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="492,63 492,67 "
+         id="polyline175" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="532,63 532,67 "
+         id="polyline176" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="573,63 573,67 "
+         id="polyline177" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="613,63 613,67 "
+         id="polyline178" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="653,63 653,67 "
+         id="polyline179" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="694,63 694,67 "
+         id="polyline180" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="734,63 734,67 "
+         id="polyline181" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="774,63 774,67 "
+         id="polyline182" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="814,63 814,67 "
+         id="polyline183" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="855,63 855,67 "
+         id="polyline184" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="895,63 895,67 "
+         id="polyline185" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="935,63 935,67 "
+         id="polyline186" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="976,63 976,67 "
+         id="polyline187" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1016,63 1016,67 "
+         id="polyline188" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,27 4,27 "
+         id="polyline191" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="10.653973"
+         y="32.863983"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text191">1.0</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,46 4,46 "
+         id="polyline192" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="10.653973"
+         y="51.863983"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text192">0.5</text>
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,84 4,84 "
+         id="polyline193" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,103 4,103 "
+         id="polyline194" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,122 4,122 "
+         id="polyline195" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,141 4,141 "
+         id="polyline196" />
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="6"
+         y="144"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text196" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-dasharray="1,2"
+       stroke-dashoffset="0"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,395)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g197">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="8,0 8,131 "
+         id="polyline197" />
+    </g>
+    <g
+       fill="none"
+       stroke="#c0c0c0"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,526)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g201">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="0,0 0,132 "
+         id="polyline198" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="235,0 235,132 "
+         id="polyline199" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="542,0 542,132 "
+         id="polyline200" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="849,0 849,132 "
+         id="polyline201" />
+    </g>
+    <g
+       fill="none"
+       stroke="#ff00ff"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,526)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g204">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="164,29 164,10 "
+         id="polyline202" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="229,29 229,10 "
+         id="polyline203" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="164,20 229,20 "
+         id="polyline204" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="translate(8.2339518,531.72797)"
+       font-family="'MS Shell Dlg 2'"
+       font-size="16.25px"
+       font-weight="400"
+       font-style="normal"
+       id="g205">
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="6"
+         y="20"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text204">AQ</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#ff0000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,526)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g214">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="163,53 163,34 "
+         id="polyline205" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="164,53 164,34 "
+         id="polyline206" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="164,44 229,44 "
+         id="polyline207" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="229,53 229,34 "
+         id="polyline208" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="230,53 230,34 "
+         id="polyline209" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="105,53 105,34 "
+         id="polyline210" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="108,53 108,34 "
+         id="polyline211" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="108,44 123,44 "
+         id="polyline212" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="123,53 123,34 "
+         id="polyline213" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="125,53 125,34 "
+         id="polyline214" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="translate(8.2339518,531.72797)"
+       font-family="'MS Shell Dlg 2'"
+       font-size="16.25px"
+       font-weight="400"
+       font-style="normal"
+       id="g215">
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="6"
+         y="44"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text214">M</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#ff0000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,526)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g219">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="105,78 105,58 "
+         id="polyline215" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="108,78 108,58 "
+         id="polyline216" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="108,68 123,68 "
+         id="polyline217" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="123,78 123,58 "
+         id="polyline218" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="125,78 125,58 "
+         id="polyline219" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="translate(8.2339518,531.72797)"
+       font-family="'MS Shell Dlg 2'"
+       font-size="16.25px"
+       font-weight="400"
+       font-style="normal"
+       id="g220">
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="6"
+         y="69"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text219">P</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#ff0000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,526)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g229">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="105,102 105,82 "
+         id="polyline220" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="109,102 109,82 "
+         id="polyline221" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="109,92 122,92 "
+         id="polyline222" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="122,102 122,82 "
+         id="polyline223" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="125,102 125,82 "
+         id="polyline224" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="41,102 41,82 "
+         id="polyline225" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="43,102 43,82 "
+         id="polyline226" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="43,92 103,92 "
+         id="polyline227" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="103,102 103,82 "
+         id="polyline228" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="105,102 105,82 "
+         id="polyline229" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="translate(8.2339518,531.72797)"
+       font-family="'MS Shell Dlg 2'"
+       font-size="16.25px"
+       font-weight="400"
+       font-style="normal"
+       id="g230">
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="6"
+         y="93"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text229">S</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#00ff00"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,526)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g233">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="43,126 43,107 "
+         id="polyline230" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="103,126 103,107 "
+         id="polyline231" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="43,116 103,116 "
+         id="polyline232" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="43,116 43,107 "
+         id="polyline233" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="translate(8.2339518,531.72797)"
+       font-family="'MS Shell Dlg 2'"
+       font-size="16.25px"
+       font-weight="400"
+       font-style="normal"
+       id="g234">
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="6"
+         y="117"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text233">RF</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#ff00ff"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,526)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g236">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="471,29 471,10 "
+         id="polyline234" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="536,29 536,10 "
+         id="polyline235" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="471,20 536,20 "
+         id="polyline236" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="translate(-61.933638,521.34603)"
+       font-family="'MS Shell Dlg 2'"
+       font-size="16.25px"
+       font-weight="400"
+       font-style="normal"
+       id="g237">
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="6"
+         y="20"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text236">AQ</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#ff0000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,526)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g251">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="470,53 470,34 "
+         id="polyline237" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="471,53 471,34 "
+         id="polyline238" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="471,44 536,44 "
+         id="polyline239" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="536,53 536,34 "
+         id="polyline240" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="537,53 537,34 "
+         id="polyline241" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="412,53 412,34 "
+         id="polyline242" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="415,53 415,34 "
+         id="polyline243" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="415,44 430,44 "
+         id="polyline244" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="430,53 430,34 "
+         id="polyline245" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="432,53 432,34 "
+         id="polyline246" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="235,53 235,34 "
+         id="polyline247" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="239,53 239,34 "
+         id="polyline248" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="239,44 278,44 "
+         id="polyline249" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="278,53 278,34 "
+         id="polyline250" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="282,53 282,34 "
+         id="polyline251" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="translate(-61.933638,521.34603)"
+       font-family="'MS Shell Dlg 2'"
+       font-size="16.25px"
+       font-weight="400"
+       font-style="normal"
+       id="g252">
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="6"
+         y="44"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text251">M</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#ff0000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,526)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g261">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="412,78 412,58 "
+         id="polyline252" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="414,78 414,58 "
+         id="polyline253" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="414,68 430,68 "
+         id="polyline254" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="430,78 430,58 "
+         id="polyline255" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="432,78 432,58 "
+         id="polyline256" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="235,78 235,58 "
+         id="polyline257" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="237,78 237,58 "
+         id="polyline258" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="237,68 253,68 "
+         id="polyline259" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="253,78 253,58 "
+         id="polyline260" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="255,78 255,58 "
+         id="polyline261" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="translate(-61.933638,521.34603)"
+       font-family="'MS Shell Dlg 2'"
+       font-size="16.25px"
+       font-weight="400"
+       font-style="normal"
+       id="g262">
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="6"
+         y="69"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text261">P</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#ff0000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,526)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g276">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="412,102 412,82 "
+         id="polyline262" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="416,102 416,82 "
+         id="polyline263" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="416,92 429,92 "
+         id="polyline264" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="429,102 429,82 "
+         id="polyline265" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="432,102 432,82 "
+         id="polyline266" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="348,102 348,82 "
+         id="polyline267" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="350,102 350,82 "
+         id="polyline268" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="350,92 410,92 "
+         id="polyline269" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="410,102 410,82 "
+         id="polyline270" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="412,102 412,82 "
+         id="polyline271" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="235,102 235,82 "
+         id="polyline272" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="239,102 239,82 "
+         id="polyline273" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="239,92 264,92 "
+         id="polyline274" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="264,102 264,82 "
+         id="polyline275" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="268,102 268,82 "
+         id="polyline276" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="translate(-61.933638,521.34603)"
+       font-family="'MS Shell Dlg 2'"
+       font-size="16.25px"
+       font-weight="400"
+       font-style="normal"
+       id="g277">
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="6"
+         y="93"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text276">S</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#00ff00"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,526)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g280">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="350,126 350,107 "
+         id="polyline277" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="410,126 410,107 "
+         id="polyline278" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="350,116 410,116 "
+         id="polyline279" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="350,116 350,107 "
+         id="polyline280" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="translate(-61.933638,521.34603)"
+       font-family="'MS Shell Dlg 2'"
+       font-size="16.25px"
+       font-weight="400"
+       font-style="normal"
+       id="g281">
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="6"
+         y="117"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text280">RF</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#ff00ff"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,526)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g283">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="778,29 778,10 "
+         id="polyline281" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="843,29 843,10 "
+         id="polyline282" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="778,20 843,20 "
+         id="polyline283" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="translate(-57.995661,525.642)"
+       font-family="'MS Shell Dlg 2'"
+       font-size="16.25px"
+       font-weight="400"
+       font-style="normal"
+       id="g284">
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="6"
+         y="20"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text283">AQ</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#ff0000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,526)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g298">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="777,53 777,34 "
+         id="polyline284" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="778,53 778,34 "
+         id="polyline285" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="778,44 843,44 "
+         id="polyline286" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="843,53 843,34 "
+         id="polyline287" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="844,53 844,34 "
+         id="polyline288" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="719,53 719,34 "
+         id="polyline289" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="722,53 722,34 "
+         id="polyline290" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="722,44 737,44 "
+         id="polyline291" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="737,53 737,34 "
+         id="polyline292" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="739,53 739,34 "
+         id="polyline293" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="542,53 542,34 "
+         id="polyline294" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="546,53 546,34 "
+         id="polyline295" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="546,44 585,44 "
+         id="polyline296" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="585,53 585,34 "
+         id="polyline297" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="589,53 589,34 "
+         id="polyline298" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="translate(-57.995661,525.642)"
+       font-family="'MS Shell Dlg 2'"
+       font-size="16.25px"
+       font-weight="400"
+       font-style="normal"
+       id="g299">
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="6"
+         y="44"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text298">M</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#ff0000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,526)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g308">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="719,78 719,58 "
+         id="polyline299" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="721,78 721,58 "
+         id="polyline300" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="721,68 737,68 "
+         id="polyline301" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="737,78 737,58 "
+         id="polyline302" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="739,78 739,58 "
+         id="polyline303" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="542,78 542,58 "
+         id="polyline304" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="544,78 544,58 "
+         id="polyline305" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="544,68 560,68 "
+         id="polyline306" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="560,78 560,58 "
+         id="polyline307" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="562,78 562,58 "
+         id="polyline308" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="translate(-57.995661,525.642)"
+       font-family="'MS Shell Dlg 2'"
+       font-size="16.25px"
+       font-weight="400"
+       font-style="normal"
+       id="g309">
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="6"
+         y="69"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text308">P</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#ff0000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,526)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g323">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="719,102 719,82 "
+         id="polyline309" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="723,102 723,82 "
+         id="polyline310" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="723,92 736,92 "
+         id="polyline311" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="736,102 736,82 "
+         id="polyline312" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="739,102 739,82 "
+         id="polyline313" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="655,102 655,82 "
+         id="polyline314" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="657,102 657,82 "
+         id="polyline315" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="657,92 717,92 "
+         id="polyline316" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="717,102 717,82 "
+         id="polyline317" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="719,102 719,82 "
+         id="polyline318" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="542,102 542,82 "
+         id="polyline319" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="546,102 546,82 "
+         id="polyline320" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="546,92 571,92 "
+         id="polyline321" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="571,102 571,82 "
+         id="polyline322" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="575,102 575,82 "
+         id="polyline323" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="translate(-57.995661,525.642)"
+       font-family="'MS Shell Dlg 2'"
+       font-size="16.25px"
+       font-weight="400"
+       font-style="normal"
+       id="g324">
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="6"
+         y="93"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text323">S</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#00ff00"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,526)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g327">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="657,126 657,107 "
+         id="polyline324" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="717,126 717,107 "
+         id="polyline325" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="657,116 717,116 "
+         id="polyline326" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="657,116 657,107 "
+         id="polyline327" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="translate(-57.995661,525.642)"
+       font-family="'MS Shell Dlg 2'"
+       font-size="16.25px"
+       font-weight="400"
+       font-style="normal"
+       id="g328">
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="6"
+         y="117"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text327">RF</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="translate(-54.415682,525.284)"
+       font-family="'MS Shell Dlg 2'"
+       font-size="16.25px"
+       font-weight="400"
+       font-style="normal"
+       id="g329">
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="6"
+         y="20"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text328">AQ</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#ff0000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,526)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g338">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1026,53 1026,34 "
+         id="polyline329" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1029,53 1029,34 "
+         id="polyline330" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1029,44 1044,44 "
+         id="polyline331" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1044,53 1044,34 "
+         id="polyline332" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1046,53 1046,34 "
+         id="polyline333" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="849,53 849,34 "
+         id="polyline334" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="853,53 853,34 "
+         id="polyline335" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="853,44 892,44 "
+         id="polyline336" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="892,53 892,34 "
+         id="polyline337" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="896,53 896,34 "
+         id="polyline338" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="translate(-54.415682,525.284)"
+       font-family="'MS Shell Dlg 2'"
+       font-size="16.25px"
+       font-weight="400"
+       font-style="normal"
+       id="g339">
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="6"
+         y="44"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text338">M</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#ff0000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,526)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g348">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1026,78 1026,58 "
+         id="polyline339" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1028,78 1028,58 "
+         id="polyline340" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1028,68 1044,68 "
+         id="polyline341" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1044,78 1044,58 "
+         id="polyline342" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1046,78 1046,58 "
+         id="polyline343" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="849,78 849,58 "
+         id="polyline344" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="851,78 851,58 "
+         id="polyline345" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="851,68 867,68 "
+         id="polyline346" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="867,78 867,58 "
+         id="polyline347" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="869,78 869,58 "
+         id="polyline348" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="translate(-54.415682,525.284)"
+       font-family="'MS Shell Dlg 2'"
+       font-size="16.25px"
+       font-weight="400"
+       font-style="normal"
+       id="g349">
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="6"
+         y="69"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text348">P</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#ff0000"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,526)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g363">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1026,102 1026,82 "
+         id="polyline349" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1030,102 1030,82 "
+         id="polyline350" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1030,92 1043,92 "
+         id="polyline351" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1043,102 1043,82 "
+         id="polyline352" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1046,102 1046,82 "
+         id="polyline353" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="962,102 962,82 "
+         id="polyline354" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="964,102 964,82 "
+         id="polyline355" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="964,92 1024,92 "
+         id="polyline356" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1024,102 1024,82 "
+         id="polyline357" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1026,102 1026,82 "
+         id="polyline358" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="849,102 849,82 "
+         id="polyline359" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="853,102 853,82 "
+         id="polyline360" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="853,92 878,92 "
+         id="polyline361" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="878,102 878,82 "
+         id="polyline362" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="881,102 881,82 "
+         id="polyline363" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="translate(-54.415682,525.284)"
+       font-family="'MS Shell Dlg 2'"
+       font-size="16.25px"
+       font-weight="400"
+       font-style="normal"
+       id="g364">
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="6"
+         y="93"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text363">S</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#00ff00"
+       stroke-opacity="1"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,526)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g367">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="964,126 964,107 "
+         id="polyline364" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="1024,126 1024,107 "
+         id="polyline365" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="964,116 1024,116 "
+         id="polyline366" />
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="964,116 964,107 "
+         id="polyline367" />
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-width="2"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="translate(-54.415682,525.284)"
+       font-family="'MS Shell Dlg 2'"
+       font-size="16.25px"
+       font-weight="400"
+       font-style="normal"
+       id="g368">
+      <text
+         fill="#000000"
+         fill-opacity="1"
+         stroke="none"
+         xml:space="preserve"
+         x="6"
+         y="117"
+         font-family="'MS Shell Dlg 2'"
+         font-size="16.25px"
+         font-weight="400"
+         font-style="normal"
+         id="text367">RF</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-dasharray="1,2"
+       stroke-dashoffset="0"
+       stroke-width="2.0"
+       stroke-linecap="square"
+       stroke-linejoin="bevel"
+       transform="matrix(1,0,0,1,0,526)"
+       font-family="MS Shell Dlg 2"
+       font-size="16.25"
+       font-weight="400"
+       font-style="normal"
+       id="g369">
+      <polyline
+         fill="none"
+         vector-effect="none"
+         points="8,0 8,132 "
+         id="polyline368" />
+    </g>
+  </g>
+  <metadata
+     id="metadata370">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>SVG export:G:/Temp/mpf.gve</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

@@ -1,0 +1,219 @@
+site_name: OpenMR - Pulseq sequences on Philips
+site_description: Run Pulseq on Philips MRI scanners. The OpenMR interpreter makes advanced sequences accessible, through the pTx-Pulseq and hybrid extensions!
+site_url: https://openmr.nl
+
+repo_url: https://github.com/Roosted7/pTx-Pulseq
+repo_name: pTx-Pulseq GitHub
+edit_uri: edit/main/docs/
+
+nav:
+  - index.md
+  - features.md
+  - examples.md
+  - quickstart.md
+  - community-contact.md
+
+extra_css:
+  - stylesheets/extra.css
+  - https://unpkg.com/katex@0/dist/katex.min.css
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+  #- https://unpkg.com/mermaid@11.7.0/dist/mermaid.min.js
+# These fonts are not downloaded automatically by mkdocs-material, so we need to include them manually:
+  - https://unpkg.com/katex@0/dist/fonts/KaTeX_Caligraphic-Regular.woff2
+  - https://unpkg.com/katex@0/dist/fonts/KaTeX_Main-Regular.woff2
+  - https://unpkg.com/katex@0/dist/fonts/KaTeX_Math-Italic.woff2
+  - https://unpkg.com/katex@0/dist/fonts/KaTeX_Main-Regular.woff
+  - https://unpkg.com/katex@0/dist/fonts/KaTeX_Caligraphic-Regular.woff
+  - https://unpkg.com/katex@0/dist/fonts/KaTeX_Math-Italic.woff
+  - https://unpkg.com/katex@0/dist/fonts/KaTeX_Caligraphic-Regular.ttf
+  - https://unpkg.com/katex@0/dist/fonts/KaTeX_Main-Regular.ttf
+  - https://unpkg.com/katex@0/dist/fonts/KaTeX_Math-Italic.ttf
+
+theme:
+  name: material
+
+  logo: assets/logo/pTx-Pulseq.png
+  favicon: assets/Pulseq_file_icon.png
+
+  icon:
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+    edit: material/pencil 
+    view: material/eye
+
+  palette:
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  features:
+#    - header.autohide
+
+    - navigation.top
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+
+    - content.code.annotate
+    - content.code.copy
+    
+    - content.tabs.link
+    
+    - content.action.edit
+    - content.action.view
+
+markdown_extensions:
+  # Includes: BetterEm, SuperFences, Footnotes, attr_list, def_list, tables, abbr, md_in_html
+  - pymdownx.extra
+  - pymdownx.betterem:
+      smart_enable: all # of betterm
+  - pymdownx.superfences:
+      preserve_tabs: true
+      custom_fences:
+        # Mermaid diagrams
+        - name: mermaid
+          class: mermaid
+          #format: !!python/name:mermaid2.fence_mermaid_custom
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  # Blocks plugins that work on "///" fences
+  - pymdownx.blocks.tab:
+      alternate_style: true
+      slugify: true
+      combine_header_slug: true
+  - pymdownx.blocks.caption
+  - pymdownx.blocks.admonition
+  - pymdownx.blocks.details
+  - pymdownx.blocks.html
+
+  # Better lists
+  - pymdownx.fancylists
+  - pymdownx.saneheaders
+
+  # Code highlighting
+  - pymdownx.highlight:
+      guess_lang: true
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink:
+      hide_protocol: true
+  
+  # Text formatting
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+
+  # Emoji
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  # Math
+  - pymdownx.arithmatex:
+      generic: true
+  # Symbols
+  - pymdownx.smartsymbols
+  # Easy escaping
+  - pymdownx.escapeall
+  # Progress bar
+  - pymdownx.progressbar
+
+plugins:
+  - privacy
+  - search
+  - social
+  - git-revision-date-localized:
+      enable_creation_date: true
+      fallback_to_build_date: true
+  - mkdocs-video:
+      is_video: False
+      video_muted: True
+      video_controls: False
+      video_autoplay: True
+      video_type: avif
+      video_loop: True
+      css_style:
+        width: "100%"
+  - glightbox
+  - tags
+#  - mermaid2:
+#      arguments:
+#      # test if its __palette_1 (dark) or __palette_2 (light)
+#      # for mkdocs-material >=8.0.0
+#      theme: |
+#        ^(JSON.parse(__md_get("__palette").index == 1)) ? 'dark' : 'light'
+  - with-pdf:
+      enabled_if_env: ENABLE_PDF_EXPORT
+  - offline
+#  - minify:
+#      minify_html: true
+#      minify_js: false
+#      minify_css: true
+#      htmlmin_opts:
+#          remove_comments: true
+#      cache_safe: true
+
+copyright: Made by Thomas Roos – <a href="#__consent">Change cookie settings</a>
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Roosted7/pTx-Pulseq
+      name: pTx-Pulseq GitHub repository
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/thomas-roos/
+      name: Thomas Roos' LinkedIn profile
+    - icon: fontawesome/solid/globe
+      link: https://www.highfieldmri.nl/
+      name: Utrecht High Field MRI group
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:t.h.m.roos-2@umcutrecht.nl
+      name: Send me an email
+  analytics:
+    provider: google
+    property: G-M6F2H6YFX3
+  consent:
+    title: 🍪 Cookie consent
+    actions:
+      - accept
+      - manage 
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+
+#  version:
+#    provider: mike
+

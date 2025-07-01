@@ -1,0 +1,23 @@
+{
+  "name": "mkdocs-optimized",
+  "version": "2.0.0",
+  "description": "A simplified, in-place asset optimization pipeline for MkDocs.",
+  "private": true,
+  "scripts": {
+    "optimize": "node --max-old-space-size=40960 optimize.js"
+  },
+  "devDependencies": {
+    "cheerio": "^1.1.0",
+    "cssnano": "^7.0.7",
+    "glob": "^11.0.3",
+    "html-minifier-terser": "^7.2.0",
+    "imagemin": "^9.0.1",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-jpegtran": "^8.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^11.0.1",
+    "imagemin-webp": "^8.0.0",
+    "postcss": "^8.5.6",
+    "terser": "^5.43.1"
+  }
+}
