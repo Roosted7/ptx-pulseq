@@ -33,6 +33,7 @@ jobs:
             webpack.config.js
             package.json
             optimize.js
+            doc/specification.pdf
       
       - name: Configure Git Credentials
         run: |
