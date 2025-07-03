@@ -36,7 +36,7 @@ hide:
 
 ## Open Source Contributions
 
-While the full source code cannot be open-sourced - the Pulseq interpreter is built on open-source principles.
+While the full source code cannot be open-sourced - the pTx-Pulseq interpreter is built on open-source principles.
 We welcome contributions:
 
 - __Bug reports:__ Help us improve stability and compatibility
@@ -63,8 +63,8 @@ Depending on the _source_ of the question of problem, you can reach out for:
 /// admonition | Direct contact
     type: info
 
-:fontawesome-solid-user-pen: Your idea, problem, question or suggestion could help others, 
-so please use [the above](#quick-questions) for them.  
+:fontawesome-solid-user-pen: Your idea, problem, question or suggestion could help others,
+so please use [the above](#getting-help) for them.
 ///
 
 In case you need to contact the lead developer of the Philips interpreter directly:
@@ -83,22 +83,39 @@ High Field MRI Research Group
 ///
 ///
 
-
 ---
 
 # Acknowledgments
 
-This work was supported by:
+This work was supported by our partners:
 
-- __UMC Utrecht__ - Platform & Methods Team
-- __CEA NeuroSpin__ - PASTeUR pulses and pTx expertise
-- __Philips Healthcare__ - Technical partnership and scanner access
-- __Dutch Research Council (NWO)__ - Funding support
+/// html | div.logo-grid
+/// html | div.logo-item
+![CEA Logo](assets/logo/CEAjoliot.png)
+[__CEA NeuroSpin__](https://joliot.cea.fr/drf/joliot/en/research/NeuroSpin)
+_PASTeUR pulses and pTx expertise_
+///
+/// html | div.logo-item
+![Philips Logo](assets/logo/Philips_logo_new.svg)
+[__Philips Healthcare__](https://www.philips.com/healthcare/diagnostic-imaging/magnetic-resonance-imaging)
+_Technical partnership and scanner access_
+///
+/// html | div.logo-item
+![NWO Logo](assets/logo/NWO.svg)
+[__Dutch Research Council__](https://www.nwo.nl/en/calls/nwo-talent-programme)
+_Funding support for research and development_
+///
+///
 
 We thank the global Pulseq community for creating the foundation that makes vendor-neutral sequence development possible.
 
-<div style="text-align: center; margin: 3rem 0; padding: 2rem; background-color: #f8f9fa; border-radius: 8px;">
-  <h3>Ready to get started?</h3>
-  <p>Follow our <a href="/quickstart">quickstart guide</a> or
-   explore <a href="/examples">example sequences</a> to begin using OpenMR on your Philips scanner.</p>
-</div>
+/// html | div.cta-section
+
+## Ready to get started?
+
+Get _inspired_ by the examples, then _follow along_ with our quickstart guide!
+
+[:rocket: Get Started](quickstart.md){ .md-button .md-button--primary .md-button--animated }
+[:camera: View Examples](examples.md){ .md-button .md-button--animated }
+
+///

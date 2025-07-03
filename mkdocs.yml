@@ -4,7 +4,7 @@ site_url: https://openmr.nl
 
 repo_url: https://github.com/Roosted7/pTx-Pulseq
 repo_name: pTx-Pulseq GitHub
-edit_uri: edit/main/docs/
+edit_uri: edit/master/docs/
 
 nav:
   - index.md
@@ -37,7 +37,7 @@ theme:
   name: material
 
   logo: assets/logo/pTx-Pulseq.png
-  favicon: assets/Pulseq_file_icon.png
+  favicon: assets/PulseqFileIconSmall.png
 
   icon:
     admonition:

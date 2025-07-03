@@ -48,116 +48,64 @@
 .md-typeset .hero {
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #5EB795 0%, #4a9579 100%);
+  background: linear-gradient(135deg, #5eb795 0%, #4a9579 100%);
   color: white;
-  margin: -2.5rem -1.5rem 3rem -1.5rem;
+  margin-bottom: 3rem;
   border-radius: 0 0 24px 24px;
+  box-sizing: border-box; /* Ensures padding is included within the element's width */
+
+  /* New styles to extend and manage responsiveness */
+  width: calc(100vw - 12px); /* Make it span the full viewport width */
+  position: relative; /* Needed for positioning relative to the viewport */
+  left: 50%; /* Pull the element's left edge to the center of the viewport */
+  transform: translateX(-50%); /* Pull it back by half its own width to truly center it */
+
+  /* Set a maximum width for the hero: 110% of the .md-grid's max-width (61rem) */
+  max-width: calc(61rem * 1.1); /* Extends it to 110% of your content width */
 }
 
-/* Full-width hero only on mobile */
-@media (max-width: 768px) {
-  .md-typeset .hero {
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    margin-top: 0rem;
-    width: 100vw;
-    position: relative;
-  }
-}
-
-.md-typeset .hero__container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
+/* Consolidated hero title styles (desktop) */
 .md-typeset .hero__title {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  /* Removed font-size here. The font-size of text is handled by .hero__text. */
+  margin: 0 auto 1rem auto; /* 1rem bottom margin for desktop */
   color: white;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   display: flex;
-  align-items: center;
+  align-items: center; /* This ensures vertical alignment for desktop row layout */
   justify-content: center;
   gap: 0.5rem;
+  flex-wrap: wrap; /* Allows items to wrap onto a new line if content is too wide */
+  text-align: center; /* Ensures text is centered within its own space */
 }
 
-/* Modifier for grid on hero title */
-.md-typeset .hero__title.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  text-align: center;
-}
-@media (max-width: 600px) {
-  .md-typeset .hero__title.grid {
-    flex-direction: column;
-    gap: 0.2rem;
-    align-items: center;
-  }
-  
-  /* Force center alignment on mobile for all children */
-  .md-typeset .hero__title.grid * {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    display: block;
-  }
-}
-
-
+/* Common styles for all logos in the hero title */
 .md-typeset .hero__logo {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  max-width: 100%;
+  object-fit: contain;
+}
+/* Specific styles for the default pTx-Pulseq logo (not the philips one) */
+.md-typeset .hero__logo:not(.hero__logo--philips) {
   height: 4rem;
-  vertical-align: -20%;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  max-width: 100%;
-  object-fit: contain;
+  vertical-align: -0.95rem; /* Crucial for alignment on desktop */
 }
-.md-typeset .hero__philips {
+/* Specific styles for the Philips logo */
+.md-typeset .hero__logo--philips {
   height: 2.5rem;
-  vertical-align: -5%;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  max-width: 100%;
-  object-fit: contain;
+  vertical-align: -0.2rem; /* Crucial for alignment on desktop */
 }
+
 .md-typeset .hero__text {
-  font-size: 3rem;
+  font-size: 3rem; /* Explicit font size for the "on" text */
   color: white;
   white-space: nowrap;
-}
-@media (max-width: 600px) {
-  .md-typeset .hero__logo {
-    height: 3rem;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-  }
-  .md-typeset .hero__philips {
-    height: 2rem;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-  }
-  .md-typeset .hero__text {
-    font-size: 2rem;
-    margin: 0.5rem 0;
-  }
-  
-  /* Ensure hero content doesn't overflow on small screens */
-  .md-typeset .hero {
-    padding: 3rem 1rem;
-  }
 }
 
 .md-typeset .hero__subtitle {
   font-size: 1.4rem;
   margin-bottom: 2rem;
-  color: rgba(255,255,255,0.95);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  color: rgba(255, 255, 255, 0.95);
   line-height: 1.5;
 }
 
@@ -166,7 +114,7 @@
 }
 
 .md-typeset .hero__button {
-  background: #FFA500;
+  background: #ffa500;
   color: white;
   margin-right: 1rem;
   padding: 12px 24px;
@@ -174,28 +122,105 @@
   border-radius: 8px;
   text-decoration: none;
   display: inline-block;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative; /* required for shine */
+  overflow: hidden;  /* clip the shine gradient */
 }
+
+/* Shine effect for hero buttons (fast sweep) */
+.md-typeset .hero__button::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255,255,255,0.2) 50%,
+    transparent 100%);
+  transition: left 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.md-typeset .hero__button:hover::before {
+  left: 100%;
+}
+
 .md-typeset .hero__button--secondary {
+  /* glass-like base */
   background: rgba(255,255,255,0.2);
-  color: white;
-  border: 2px solid rgba(255,255,255,0.5);
+  border: 2px solid rgba(255,255,255,0.4);
   margin-right: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15),
+              0 2px 4px rgba(0,0,0,0.1),
+              inset 0 1px 0 rgba(255,255,255,0.2);
 }
-@media (max-width: 600px) {
+
+.md-typeset .hero__button--secondary:hover {
+  /* glass intensifies on hover */
+  background: rgba(255,255,255,0.35);
+  border-color: rgba(255,255,255,0.6);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2),
+              0 4px 8px rgba(0,0,0,0.15),
+              inset 0 1px 0 rgba(255,255,255,0.3);
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 560px) {
+  .md-typeset .hero {
+    padding: 3rem 1rem 2rem 1rem; /* top, right, bottom (2rem), left */
+  }
+
+  .md-typeset .hero__title {
+    flex-direction: column; /* Stack title elements vertically */
+    gap: 0.2rem; /* Reduce gap when stacked */
+    align-items: center; /* Explicitly center items horizontally in column layout */
+    margin-bottom: 0; /* Remove bottom margin to reduce space before subtitle */
+  }
+
+  /* Common mobile styles for all logos */
+  .md-typeset .hero__logo {
+    height: auto; /* Allow height to be determined by specific rules */
+    display: block; /* Force block behavior for stacking */
+    margin-left: auto; /* Center logo horizontally */
+    margin-right: auto;
+  }
+  /* Specific mobile height for the default pTx-Pulseq logo */
+  .md-typeset .hero__logo:not(.hero__logo--philips) {
+    height: 3rem; /* Adjust logo size */
+  }
+  /* Specific mobile height for the Philips logo */
+  .md-typeset .hero__logo--philips {
+    height: 2rem; /* Adjust Philips logo size */
+  }
+
+  .md-typeset .hero__text {
+    font-size: 2rem; /* Adjust text size */
+    margin-bottom: 0.5rem; /* Add spacing below "on" text, *between* items in column */
+    display: block; /* Force block behavior for stacking */
+    margin-left: auto; /* Center "on" text horizontally */
+    margin-right: auto;
+  }
+
+  .md-typeset .hero__subtitle {
+    margin-top: 1.5rem; /* Space from title (as title now has margin-bottom: 0) */
+    margin-bottom: 1rem; /* Define the full 2rem space below the subtitle */
+  }
+
   .md-typeset .hero__actions {
+    margin-top: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons horizontally */
   }
   .md-typeset .hero__button {
-    margin-right: 0;
-    margin-bottom: 1rem;
+    margin-right: 0; /* Remove horizontal margin between buttons */
+    margin-bottom: 1rem; /* Add vertical spacing between stacked buttons */
     width: 100%;
-    max-width: 320px;
+    max-width: 320px; /* Constrain button width */
   }
   .md-typeset .hero__button--secondary {
-    margin-bottom: 0;
+    margin-bottom: 0; /* Remove margin-bottom for the last button */
   }
 }
 
@@ -248,4 +273,217 @@ h1.md-typeset .universal-title {
     padding: 1.2rem 1.5rem;
     border-radius: 0 8px 8px 0;
   }
+}
+
+/* Call-to-action section */
+.md-typeset .cta-section {
+  text-align: center;
+  margin: 3rem 0;
+  padding: 1.5rem 1.5rem;
+  background: linear-gradient(135deg, 
+    var(--md-primary-fg-color--light, #7AC5A0) 0%, 
+    var(--md-primary-fg-color, #5EB795) 100%);
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(94, 183, 149, 0.15);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle overlay pattern for texture */
+.md-typeset .cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(255,255,255,0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.md-typeset .cta-section h2,
+.md-typeset .cta-section h3 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.md-typeset .cta-section p {
+  color: rgba(255,255,255,0.95);
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.md-typeset .cta-section .md-button {
+  margin: 0.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Animated button modifier */
+.md-typeset .md-button--animated {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+  /* Default shadow for animated buttons (lighter for CTA section) */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Enhanced shadow for hero buttons */
+.md-typeset .hero__button.md-button--animated {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.md-typeset .md-button--animated:hover {
+  transform: translateY(-2px);
+}
+
+/* Default hover shadow for animated buttons */
+.md-typeset .md-button--animated:hover {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+/* Enhanced hover shadow for hero buttons */
+.md-typeset .hero__button.md-button--animated:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.md-typeset .md-button--animated:active {
+  transform: translateY(0);
+  transition-duration: 0.1s;
+}
+
+/* Special styling for CTA buttons */
+.md-typeset .cta-section .md-button--primary {
+  background: var(--md-accent-fg-color);
+  border: 2px solid var(--md-accent-fg-color);
+  color: white;
+  font-weight: 600;
+}
+
+.md-typeset .cta-section .md-button--primary:hover {
+  background: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+  color: white;
+}
+
+.md-typeset .cta-section .md-button:not(.md-button--primary) {
+  background: rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.3);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.md-typeset .cta-section .md-button:not(.md-button--primary):hover {
+  background: rgba(255,255,255,0.25);
+  border-color: rgba(255,255,255,0.5);
+  color: white;
+}
+
+/* Dark mode styling for CTA section */
+[data-md-color-scheme="slate"] .md-typeset .cta-section {
+  background: linear-gradient(135deg, 
+    #2d5a45 0%, 
+    #1a2f4a 100%);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+/* Dark mode overlay pattern - more subtle */
+[data-md-color-scheme="slate"] .md-typeset .cta-section::before {
+  background: radial-gradient(circle at 30% 20%, rgba(94, 183, 149, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(255, 165, 0, 0.05) 0%, transparent 50%);
+}
+
+/* Dark mode text styling */
+[data-md-color-scheme="slate"] .md-typeset .cta-section h2,
+[data-md-color-scheme="slate"] .md-typeset .cta-section h3 {
+  color: #e8f5f0;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .cta-section p {
+  color: rgba(232, 245, 240, 0.9);
+}
+
+/* Dark mode button styling */
+[data-md-color-scheme="slate"] .md-typeset .md-button--animated {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Enhanced dark mode shadow for hero buttons */
+[data-md-color-scheme="slate"] .md-typeset .hero__button.md-button--animated {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .md-button--animated:hover {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+/* Enhanced dark mode hover shadow for hero buttons */
+[data-md-color-scheme="slate"] .md-typeset .hero__button.md-button--animated:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .cta-section .md-button--primary {
+  background: var(--md-accent-fg-color);
+  border: 2px solid var(--md-accent-fg-color);
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .cta-section .md-button--primary:hover {
+  background: #ffb733;
+  border-color: #ffb733;
+  color: #1a1a1a;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .cta-section .md-button:not(.md-button--primary) {
+  background: rgba(94, 183, 149, 0.2);
+  border: 2px solid rgba(94, 183, 149, 0.4);
+  color: #e8f5f0;
+  backdrop-filter: blur(10px);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .cta-section .md-button:not(.md-button--primary):hover {
+  background: rgba(94, 183, 149, 0.3);
+  border-color: rgba(94, 183, 149, 0.6);
+  color: white;
+}
+
+/* Logo grid styling for acknowledgments and partner sections */
+.md-typeset .logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  align-items: start;
+}
+
+.md-typeset .logo-grid .logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.md-typeset .logo-grid .logo-item img {
+  height: 70px;
+  width: auto;
+  max-width: 120px;
+  display: block;
+  margin: 0 auto 0.25rem auto;
+  object-fit: contain;
+}
+
+.md-typeset .logo-grid .logo-item strong {
+  display: block;
+  font-size: 1rem;
 }
