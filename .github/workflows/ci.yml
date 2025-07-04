@@ -56,6 +56,11 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm' # Cache npm dependencies
+
+      - name: Install pngquant
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pngquant
       
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
 
