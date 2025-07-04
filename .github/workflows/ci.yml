@@ -30,10 +30,12 @@ jobs:
           sparse-checkout: |
             docs
             mkdocs.yml
-            webpack.config.js
             package.json
+            package-lock.json
             optimize.js
             doc/specification.pdf
+            requirements.txt
+            mkdocs_material-9.6.9+insiders.4.53.16-py3-none-any.whl
       
       - name: Configure Git Credentials
         run: |

@@ -1,0 +1,8 @@
+./mkdocs_material-9.6.9+insiders.4.53.16-py3-none-any.whl
+mkdocs-git-revision-date-localized-plugin
+mkdocs-video
+mkdocs-glightbox
+mkdocs-with-pdf
+mkdocs-material[imaging]
+pillow
+cairosvg
