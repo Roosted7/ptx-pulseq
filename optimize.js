@@ -20,10 +20,12 @@ async function loadImagemin() {
     const imagemin = (await import('imagemin')).default;
     const imageminGifsicle = (await import('imagemin-gifsicle')).default;
     const imageminJpegtran = (await import('imagemin-jpegtran')).default;
+    const imageminPngquant = (await import('imagemin-pngquant')).default;
     const imageminOptipng = (await import('imagemin-optipng')).default;
+    const imageminZopfli = (await import('imagemin-zopfli')).default;
     const imageminSvgo = (await import('imagemin-svgo')).default;
     const imageminWebp = (await import('imagemin-webp')).default;
-    return { imagemin, imageminGifsicle, imageminJpegtran, imageminOptipng, imageminSvgo, imageminWebp };
+    return { imagemin, imageminGifsicle, imageminJpegtran, imageminPngquant, imageminOptipng, imageminZopfli, imageminSvgo, imageminWebp };
 }
 
 const SITE_DIR = 'site';
@@ -116,7 +118,7 @@ async function minifyCss() {
 
 async function optimizeImages(imageminTools) {
     if (!pLimit) pLimit = (await import('p-limit')).default;
-    const { imagemin, imageminGifsicle, imageminJpegtran, imageminOptipng, imageminSvgo, imageminWebp } = imageminTools;
+    const { imagemin, imageminGifsicle, imageminJpegtran, imageminPngquant, imageminOptipng, imageminZopfli, imageminSvgo, imageminWebp } = imageminTools;
     const imageFiles = await glob(`${SITE_DIR}/**/*.{jpg,jpeg,png,gif,svg}`);
 
     console.log('\n--- Optimizing Images (Lossless) & Generating WebP ---');
@@ -128,34 +130,75 @@ async function optimizeImages(imageminTools) {
         try {
             const originalBuffer = await fs.readFile(file);
             const originalSize = originalBuffer.length;
-            // 1. Perform lossless optimization
-            const optimizedBuffer = await imagemin.buffer(originalBuffer, {
-                plugins: [
-                    imageminGifsicle({ interlaced: true }),
-                    imageminJpegtran({ progressive: true }),
-                    imageminOptipng({ optimizationLevel: 7 }),
-                    imageminSvgo()
-                ]
-            });
-            const newSize = optimizedBuffer.length;
-            const savings = originalSize - newSize;
-            const percent = ((savings / originalSize) * 100).toFixed(1);
             totalOriginal += originalSize;
-            if (savings > MIN_SAVINGS_BYTES) {
-                totalSaved += savings;
+            // 1. Perform PNG lossy optimization with pngquant, then lossless with optipng (if PNG)
+            let optimizedBuffer = originalBuffer;
+            if (/\.png$/i.test(file)) {
+                // pngquant (lossy palette reduction), then lossless optipng + zopfli
+                let buf = await imagemin.buffer(originalBuffer, {
+                    plugins: [imageminPngquant({ quality: [0.7, 0.95], speed: 2 })]
+                });
+                if (!(buf instanceof Buffer)) {
+                    buf = Buffer.from(buf.buffer, buf.byteOffset, buf.byteLength);
+                }
+                optimizedBuffer = await imagemin.buffer(buf, {
+                    plugins: [
+                        imageminOptipng({ optimizationLevel: 7 }),
+                        imageminZopfli({ more: true })
+                    ]
+                });
+            } else {
+                // Other formats: use existing plugins
+                optimizedBuffer = await imagemin.buffer(originalBuffer, {
+                    plugins: [
+                        imageminGifsicle({ interlaced: true }),
+                        imageminJpegtran({ progressive: true }),
+                        imageminSvgo()
+                    ]
+                });
+            }
+            const newSize = optimizedBuffer.length;
+            savings = originalSize - newSize;
+            const percent = ((savings / originalSize) * 100).toFixed(1);
+            if (newSize < originalSize) {
                 console.log(`  Optimizing: ${file} (Original: ${fmt(originalSize)}, New: ${fmt(newSize)}, Saved: ${fmt(savings)} [${percent}%])`);
                 await fs.writeFile(file, optimizedBuffer);
             } else {
-                console.log(`  Skipping: ${file} (Original: ${fmt(originalSize)}, New: ${fmt(newSize)}, Savings of ${fmt(savings)} [${percent}%] is below threshold of ${MIN_SAVINGS_BYTES}b)`);
+                console.log(`  Skipping: ${file} (Original: ${fmt(originalSize)}, New: ${fmt(newSize)}, Added ${fmt(-savings)} [${percent}%])`);
+                savings = 0; // Reset savings if no optimization
             }
-            // 2. Generate WebP version (for PNG and JPG only)
+            // 2. Always generate WebP version for PNG and JPG, but only keep if savings > threshold
+            let webpSavings = 0;
             if (/\.(jpe?g|png)$/i.test(file)) {
-                const webpBuffer = await imagemin.buffer(originalBuffer, {
-                    plugins: [imageminWebp({ quality: 75 })]
+                // Choose the smaller buffer for WebP conversion, and coerce to Buffer
+                const rawSource = newSize < originalSize ? optimizedBuffer : originalBuffer;
+                // Ensure a Node Buffer: accept Buffer or Uint8Array
+                const imageBuffer = Buffer.isBuffer(rawSource)
+                    ? rawSource
+                    : rawSource instanceof Uint8Array
+                        ? Buffer.from(rawSource)
+                        : Buffer.from(rawSource.buffer || rawSource);
+                const preSize = newSize < originalSize ? newSize : originalSize;
+                const webpBuffer = await imagemin.buffer(imageBuffer, {
+                    plugins: [imageminWebp({ quality: 85 })]
                 });
                 const webpPath = file.replace(/\.(jpe?g|png)$/i, '.webp');
-                await fs.writeFile(webpPath, webpBuffer);
+                webpSavings = (preSize - webpBuffer.length) || 0;
+                if (webpSavings > MIN_SAVINGS_BYTES) {
+                    await fs.writeFile(webpPath, webpBuffer);
+                    console.log(`  WebP:    ${webpPath} (Saved: ${fmt(webpSavings)} [${((webpSavings/preSize)*100).toFixed(1)}%])`);
+                } else {
+                    // Remove stale .webp if present
+                    try { await fs.unlink(webpPath); } catch {}
+                    console.log(`  WebP:    ${webpPath} (Not kept, savings ${fmt(webpSavings)} < ${MIN_SAVINGS_BYTES}b)`);
+                    webpSavings = 0; // Reset if not kept
+                }
             }
+            totalSaved += savings + webpSavings;
+            if (webpSavings > 0) {
+                console.log(`  Total savings for ${file}: ${fmt(savings + webpSavings)} [${((savings + webpSavings) / originalSize * 100).toFixed(1)}%]`);
+            }
+
         } catch (err) {
             console.error(`  Error optimizing image ${file}:`, err.message);
         }

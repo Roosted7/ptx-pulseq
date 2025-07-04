@@ -46,7 +46,7 @@ MP-RAGE is a 3D sequence that integrates an inversion pulse for T1-weighted imag
 ///
 
 /// html | div
-![MPRAGE comparison](assets/sequence/MPRAGE/MPRAGE_invivo_Pulseq_PhilipsNative_comparison.png)
+![MPRAGE comparison](assets/sequence/MPRAGE/MPRAGE_invivo_Pulseq_PhilipsNative_comparison.png){ loading=lazy }
 /// caption
 Pulseq and Philips (parameter-matched) MP-RAGE head scans
 ///
@@ -92,7 +92,7 @@ Pulse sequence diagram of spiral sequence
 ///
 
 /// html | div
-![Spiral trajectory comparison](assets/sequence/spiral/Spiral_requested_and_measured_kspace_and_gradient_trajectory.png)
+![Spiral trajectory comparison](assets/sequence/spiral/Spiral_requested_and_measured_kspace_and_gradient_trajectory.png){ loading=lazy }
 /// caption
 Requested and measured k-space and gradient trajectories.
 ///
@@ -124,7 +124,7 @@ It acquires the same slice multiple times, each with only one Tx channel active.
 ///
 
 /// html | div.grid
-![GRE slices each acquired with 1 Tx channel](assets/sequence/pTx/pTx_GRE_singleTx_slices_Pulseq_vs_PhilipsNative_phantom_withdifferencebelow.png)
+![GRE slices each acquired with 1 Tx channel](assets/sequence/pTx/pTx_GRE_singleTx_slices_Pulseq_vs_PhilipsNative_phantom_withdifferencebelow.png){ loading=lazy }
 /// caption
 GRE slices each acquired with 1 Tx channel
 ///
@@ -192,7 +192,7 @@ Merging of Pulseq and native sequence into a hybrid sequence
 ///
 
 /// html | div
-![Hybrid vs native comparison](assets/sequence/MPRAGE/MPRAGE_invivo_nonpTxPhilipsNative_versus_HybridPulseqpTx.png)
+![Hybrid vs native comparison](assets/sequence/MPRAGE/MPRAGE_invivo_nonpTxPhilipsNative_versus_HybridPulseqpTx.png){ loading=lazy }
 /// caption
 Improved $\mathcal{\tilde{B}}_1^{(+)}$ homogeneity with PASTeUR Universal Pulse  
 using a hybrid pTx-Pulseq sequence

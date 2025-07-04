@@ -1,5 +1,7 @@
 ---
 icon: material/home
+title: Home
+id: home
 hide:
   - navigation
   - toc

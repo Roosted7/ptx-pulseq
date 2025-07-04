@@ -22,16 +22,6 @@ extra_javascript:
   - https://unpkg.com/katex@0/dist/katex.min.js
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
   #- https://unpkg.com/mermaid@11.7.0/dist/mermaid.min.js
-# These fonts are not downloaded automatically by mkdocs-material, so we need to include them manually:
-  - https://unpkg.com/katex@0/dist/fonts/KaTeX_Caligraphic-Regular.woff2
-  - https://unpkg.com/katex@0/dist/fonts/KaTeX_Main-Regular.woff2
-  - https://unpkg.com/katex@0/dist/fonts/KaTeX_Math-Italic.woff2
-  - https://unpkg.com/katex@0/dist/fonts/KaTeX_Main-Regular.woff
-  - https://unpkg.com/katex@0/dist/fonts/KaTeX_Caligraphic-Regular.woff
-  - https://unpkg.com/katex@0/dist/fonts/KaTeX_Math-Italic.woff
-  - https://unpkg.com/katex@0/dist/fonts/KaTeX_Caligraphic-Regular.ttf
-  - https://unpkg.com/katex@0/dist/fonts/KaTeX_Main-Regular.ttf
-  - https://unpkg.com/katex@0/dist/fonts/KaTeX_Math-Italic.ttf
 
 theme:
   name: material
@@ -78,6 +68,7 @@ theme:
     - navigation.top
     - navigation.instant
     - navigation.instant.progress
+    - navigation.instant.prefetch
     - navigation.tracking
     - navigation.tabs
     - navigation.tabs.sticky
@@ -148,9 +139,16 @@ markdown_extensions:
   - pymdownx.escapeall
   # Progress bar
   - pymdownx.progressbar
+  - material.extensions.preview:
+      configurations:
+        - sources:
+            exclude:
+              - index.md
 
 plugins:
-  - privacy
+  - privacy:
+      links_attr_map:
+        target: _blank
   - search
   - social
   - git-revision-date-localized:
@@ -183,6 +181,11 @@ plugins:
 #      htmlmin_opts:
 #          remove_comments: true
 #      cache_safe: true
+  - optimize:
+      concurrency: 1
+      optimize_png_speed: 1
+      optimize_jpg_quality: 75
+  - typeset
 
 copyright: Made by Thomas Roos – <a href="#__consent">Change cookie settings</a>
 

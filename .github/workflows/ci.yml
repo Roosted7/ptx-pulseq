@@ -64,9 +64,9 @@ jobs:
           path: .cache 
           restore-keys: |
             mkdocs-material-
-      
+
       - name: Install Python Dependencies 📦
-        run: pip install mkdocs-material mkdocs-git-revision-date-localized-plugin mkdocs-video mkdocs-glightbox mkdocs-with-pdf mkdocs-material[imaging]
+        run: pip install -r requirements.txt
 
       - name: Install Node.js Dependencies 📦
         run: npm install
