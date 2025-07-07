@@ -59,10 +59,9 @@ jobs:
           cache: 'npm' # Cache npm dependencies
 
       - name: Install pngquant
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y pngquant
-      
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: pngquant
 
       - name: Cache MkDocs Material Dependencies 🗄️
         uses: actions/cache@v4
