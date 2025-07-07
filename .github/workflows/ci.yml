@@ -107,3 +107,25 @@ jobs:
     - name: Deploy to GitHub Pages 🚀
       uses: actions/deploy-pages@v4
       id: deployment
+
+  deploy-cloudflare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    needs: build
+    steps:
+      - name: Checkout minimal files for Cloudflare deploy
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            .github
+            wrangler.toml
+      - name: Download Pages Artifact 📦
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: ./site
+      - name: Deploy to Cloudflare Workers 🚀
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
