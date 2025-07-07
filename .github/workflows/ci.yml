@@ -123,7 +123,11 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: github-pages
-          path: ./site
+          path: ./artifact
+      - name: Extract artifact.tar into site/
+        run: |
+          mkdir -p site
+          tar -xf artifact/artifact.tar -C site --strip-components=1
       - name: Deploy to Cloudflare Workers 🚀
         uses: cloudflare/wrangler-action@v3
         with:
