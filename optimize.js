@@ -3,6 +3,9 @@ const fs = require('fs').promises;
 const path = require('path');
 const { glob } = require('glob');
 const os = require('os');
+const crypto = require('crypto');
+const CACHE_DIR = path.resolve(__dirname, '.cache', 'images');
+
 let pLimit;
 const terser = require('terser');
 const postcss = require('postcss');
@@ -40,174 +43,149 @@ async function fileExists(filePath) {
     }
 }
 
-// --- Optimization Functions ---
+// --- Utility Functions ---
+function fmtSize(n) {
+    return n > 2048 ? `${(n/1024).toFixed(1)}kb` : `${n}b`;
+}
 
-async function minifyJs() {
+function logSavings(label, file, original, result, saved) {
+    const percent = ((saved / original) * 100).toFixed(1);
+    if (saved > 0) {
+        console.log(`  ${label}: ${file} (Original: ${fmtSize(original)}, New: ${fmtSize(result)}, Saved: ${fmtSize(saved)} [${percent}%])`);
+    } else {
+        console.log(`  Skipping: ${file} (Original: ${fmtSize(original)}, New: ${fmtSize(result)}, No savings)`);
+    }
+}
+
+function computeSavings(original, result) {
+    return original - result;
+}
+
+// --- Generic file processing with stats ---
+async function runWithStats(pattern, title, processFn, writeOpts = 'utf8') {
     if (!pLimit) pLimit = (await import('p-limit')).default;
-    console.log('--- Minifying JavaScript files ---');
-    const jsFiles = await glob(`${SITE_DIR}/**/*.js`);
-    const fmt = (n) => n > 2048 ? `${(n/1024).toFixed(1)}kb` : `${n}b`;
+    console.log(title);
+    const files = await glob(pattern);
     let totalOriginal = 0, totalSaved = 0;
     const limit = pLimit(os.cpus().length);
-    await Promise.all(jsFiles.map(file => limit(async () => {
+    await Promise.all(files.map(file => limit(async () => {
         try {
-            const originalContent = await fs.readFile(file, 'utf8');
-            const result = await terser.minify(originalContent);
-            if (result.error) {
-                console.error(`  Terser error in ${file}:`, result.error);
-                return;
-            }
-            const originalSize = Buffer.byteLength(originalContent, 'utf8');
-            const newSize = Buffer.byteLength(result.code, 'utf8');
-            const saved = originalSize - newSize;
-            const percent = ((saved / originalSize) * 100).toFixed(1);
+            const { originalSize, newSize, output, writePath, label } = await processFn(file);
             totalOriginal += originalSize;
+            const saved = computeSavings(originalSize, newSize);
             if (newSize < originalSize) {
                 totalSaved += saved;
-                console.log(`  Minifying: ${file} (Original: ${fmt(originalSize)}, New: ${fmt(newSize)}, Saved: ${fmt(saved)} [${percent}%])`);
-                await fs.writeFile(file, result.code, 'utf8');
+                logSavings(label, writePath, originalSize, newSize, saved);
+                await fs.writeFile(writePath, output, writeOpts);
             } else {
-                console.log(`  Skipping: ${file} (Original: ${fmt(originalSize)}, New: ${fmt(newSize)}, No savings)`);
+                logSavings('Skipping', writePath, originalSize, newSize, 0);
             }
         } catch (err) {
-            console.error(`  Error processing JS file ${file}:`, err.message);
+            console.error(`  Error processing file ${file}:`, err.message);
         }
     })));
     if (totalSaved > 0) {
         const percent = ((totalSaved / totalOriginal) * 100).toFixed(1);
-        console.log(`  Total JS savings: ${fmt(totalSaved)} / ${fmt(totalOriginal)} [${percent}%]`);
+        console.log(`  Total ${title.replace(/--- /g, '')} savings: ${fmtSize(totalSaved)} / ${fmtSize(totalOriginal)} [${percent}%]`);
     }
     return { original: totalOriginal, saved: totalSaved };
 }
 
+// --- Optimization Functions ---
+
+async function minifyJs() {
+    return runWithStats(
+        `${SITE_DIR}/**/*.js`,
+        '--- Minifying JavaScript files ---',
+        async file => {
+            const originalContent = await fs.readFile(file, 'utf8');
+            const result = await terser.minify(originalContent);
+            if (result.error) throw result.error;
+            const originalSize = Buffer.byteLength(originalContent, 'utf8');
+            const newSize = Buffer.byteLength(result.code, 'utf8');
+            return { originalSize, newSize, output: result.code, writePath: file, label: 'Minifying' };
+        }
+    );
+}
+
 async function minifyCss() {
-    if (!pLimit) pLimit = (await import('p-limit')).default;
-    console.log('\n--- Minifying CSS files ---');
-    const cssFiles = await glob(`${SITE_DIR}/**/*.css`);
     const processor = postcss([cssnano]);
-    const fmt = (n) => n > 2048 ? `${(n/1024).toFixed(1)}kb` : `${n}b`;
-    let totalOriginal = 0, totalSaved = 0;
-    const limit = pLimit(os.cpus().length);
-    await Promise.all(cssFiles.map(file => limit(async () => {
-        try {
+    return runWithStats(
+        `${SITE_DIR}/**/*.css`,
+        '\n--- Minifying CSS files ---',
+        async file => {
             const originalContent = await fs.readFile(file, 'utf8');
             const cleanContent = originalContent.replace(/\/\*# sourceMappingURL=.*\*\//g, '');
             const result = await processor.process(cleanContent, { from: undefined });
             const originalSize = Buffer.byteLength(originalContent, 'utf8');
             const newSize = Buffer.byteLength(result.css, 'utf8');
-            const saved = originalSize - newSize;
-            const percent = ((saved / originalSize) * 100).toFixed(1);
-            totalOriginal += originalSize;
-            if (newSize < originalSize) {
-                totalSaved += saved;
-                console.log(`  Minifying: ${file} (Original: ${fmt(originalSize)}, New: ${fmt(newSize)}, Saved: ${fmt(saved)} [${percent}%])`);
-                await fs.writeFile(file, result.css, 'utf8');
-            } else {
-                console.log(`  Skipping: ${file} (Original: ${fmt(originalSize)}, New: ${fmt(newSize)}, No savings)`);
-            }
-        } catch (err) {
-            console.error(`  Error processing CSS file ${file}: ${err.message}`);
+            return { originalSize, newSize, output: result.css, writePath: file, label: 'Minifying' };
         }
-    })));
-    if (totalSaved > 0) {
-        const percent = ((totalSaved / totalOriginal) * 100).toFixed(1);
-        console.log(`  Total CSS savings: ${fmt(totalSaved)} / ${fmt(totalOriginal)} [${percent}%]`);
-    }
-    return { original: totalOriginal, saved: totalSaved };
+    );
 }
 
 async function optimizeImages(imageminTools) {
-    if (!pLimit) pLimit = (await import('p-limit')).default;
+    // --- Lossless & cached optimization for images ---
     const { imagemin, imageminGifsicle, imageminJpegtran, imageminPngquant, imageminOptipng, imageminZopfli, imageminSvgo, imageminWebp } = imageminTools;
-    const imageFiles = await glob(`${SITE_DIR}/**/*.{jpg,jpeg,png,gif,svg}`);
-
-    console.log('\n--- Optimizing Images (Lossless) & Generating WebP ---');
-
-    const fmt = (n) => n > 2048 ? `${(n/1024).toFixed(1)}kb` : `${n}b`;
-    let totalOriginal = 0, totalSaved = 0;
-    const limit = pLimit(os.cpus().length);
-    await Promise.all(imageFiles.map(file => limit(async () => {
-        try {
-            const originalBuffer = await fs.readFile(file);
-            const originalSize = originalBuffer.length;
-            totalOriginal += originalSize;
-            // 1. Perform PNG lossy optimization with pngquant, then lossless with optipng (if PNG)
-            let optimizedBuffer = originalBuffer;
+    await fs.mkdir(CACHE_DIR, { recursive: true });
+    const optimizeFn = async file => {
+        const originalBuffer = await fs.readFile(file);
+        const hash = crypto.createHash('md5').update(originalBuffer).digest('hex');
+        const ext = path.extname(file);
+        const cacheImgPath = path.join(CACHE_DIR, `${hash}${ext}`);
+        let optimizedBuffer;
+        if (await fileExists(cacheImgPath)) {
+            optimizedBuffer = await fs.readFile(cacheImgPath);
+            console.log(`  Cache hit: ${file}`);
+        } else {
+            let temp = originalBuffer;
             if (/\.png$/i.test(file)) {
-                // pngquant (lossy palette reduction), then lossless optipng + zopfli
-                let buf = await imagemin.buffer(originalBuffer, {
-                    plugins: [imageminPngquant({ quality: [0.7, 0.95], speed: 2 })]
-                });
-                if (!(buf instanceof Buffer)) {
-                    buf = Buffer.from(buf.buffer, buf.byteOffset, buf.byteLength);
-                }
-                optimizedBuffer = await imagemin.buffer(buf, {
-                    plugins: [
-                        imageminOptipng({ optimizationLevel: 7 }),
-                        imageminZopfli({ more: true })
-                    ]
-                });
+                let buf = await imagemin.buffer(originalBuffer, { plugins: [imageminPngquant({ quality: [0.7,0.95], speed:2 })] });
+                if (!(buf instanceof Buffer)) buf = Buffer.from(buf.buffer, buf.byteOffset, buf.byteLength);
+                temp = await imagemin.buffer(buf, { plugins: [imageminOptipng({ optimizationLevel:7 }), imageminZopfli({ more:true })] });
             } else {
-                // Other formats: use existing plugins
-                optimizedBuffer = await imagemin.buffer(originalBuffer, {
-                    plugins: [
-                        imageminGifsicle({ interlaced: true }),
-                        imageminJpegtran({ progressive: true }),
-                        imageminSvgo()
-                    ]
-                });
+                temp = await imagemin.buffer(originalBuffer, { plugins: [imageminGifsicle({ interlaced:true }), imageminJpegtran({ progressive:true }), imageminSvgo()] });
             }
-            const newSize = optimizedBuffer.length;
-            savings = originalSize - newSize;
-            const percent = ((savings / originalSize) * 100).toFixed(1);
-            if (newSize < originalSize) {
-                console.log(`  Optimizing: ${file} (Original: ${fmt(originalSize)}, New: ${fmt(newSize)}, Saved: ${fmt(savings)} [${percent}%])`);
-                await fs.writeFile(file, optimizedBuffer);
+            optimizedBuffer = temp;
+            await fs.writeFile(cacheImgPath, optimizedBuffer);
+        }
+        const originalSize = originalBuffer.length;
+        const newSize = optimizedBuffer.length;
+        return { originalSize, newSize, output: optimizedBuffer, writePath: file, label: 'Optimizing' };
+    };
+    // Run lossless optimization
+    const stats = await runWithStats(
+        `${SITE_DIR}/**/*.{jpg,jpeg,png,gif,svg}`,
+        '\n--- Optimizing Images (Lossless) ---',
+        optimizeFn,
+        null
+    );
+    // WebP conversion
+    let webpSaved = 0;
+    const images = await glob(`${SITE_DIR}/**/*.{jpg,jpeg,png}`);
+    const limit = pLimit(os.cpus().length);
+    await Promise.all(images.map(file => limit(async () => {
+        try {
+            const buf = await fs.readFile(file);
+            const preSize = buf.length;
+            const webpBuf = await imagemin.buffer(buf, { plugins: [imageminWebp({ quality:85 })] });
+            const webpPath = file.replace(/\.(jpe?g|png)$/i,'.webp');
+            const saved = preSize - webpBuf.length;
+            if (saved > MIN_SAVINGS_BYTES) {
+                await fs.writeFile(webpPath, webpBuf);
+                webpSaved += saved;
+                const pct = ((saved/preSize)*100).toFixed(1);
+                console.log(`  WebP:    ${webpPath} (Saved: ${fmtSize(saved)} [${pct}%])`);
             } else {
-                console.log(`  Skipping: ${file} (Original: ${fmt(originalSize)}, New: ${fmt(newSize)}, Added ${fmt(-savings)} [${percent}%])`);
-                savings = 0; // Reset savings if no optimization
+                try { await fs.unlink(webpPath); } catch {}
+                console.log(`  WebP:    ${webpPath} (Not kept, savings ${fmtSize(saved)} < ${MIN_SAVINGS_BYTES}b)`);
             }
-            // 2. Always generate WebP version for PNG and JPG, but only keep if savings > threshold
-            let webpSavings = 0;
-            if (/\.(jpe?g|png)$/i.test(file)) {
-                // Choose the smaller buffer for WebP conversion, and coerce to Buffer
-                const rawSource = newSize < originalSize ? optimizedBuffer : originalBuffer;
-                // Ensure a Node Buffer: accept Buffer or Uint8Array
-                const imageBuffer = Buffer.isBuffer(rawSource)
-                    ? rawSource
-                    : rawSource instanceof Uint8Array
-                        ? Buffer.from(rawSource)
-                        : Buffer.from(rawSource.buffer || rawSource);
-                const preSize = newSize < originalSize ? newSize : originalSize;
-                const webpBuffer = await imagemin.buffer(imageBuffer, {
-                    plugins: [imageminWebp({ quality: 85 })]
-                });
-                const webpPath = file.replace(/\.(jpe?g|png)$/i, '.webp');
-                webpSavings = (preSize - webpBuffer.length) || 0;
-                if (webpSavings > MIN_SAVINGS_BYTES) {
-                    await fs.writeFile(webpPath, webpBuffer);
-                    console.log(`  WebP:    ${webpPath} (Saved: ${fmt(webpSavings)} [${((webpSavings/preSize)*100).toFixed(1)}%])`);
-                } else {
-                    // Remove stale .webp if present
-                    try { await fs.unlink(webpPath); } catch {}
-                    console.log(`  WebP:    ${webpPath} (Not kept, savings ${fmt(webpSavings)} < ${MIN_SAVINGS_BYTES}b)`);
-                    webpSavings = 0; // Reset if not kept
-                }
-            }
-            totalSaved += savings + webpSavings;
-            if (webpSavings > 0) {
-                console.log(`  Total savings for ${file}: ${fmt(savings + webpSavings)} [${((savings + webpSavings) / originalSize * 100).toFixed(1)}%]`);
-            }
-
         } catch (err) {
-            console.error(`  Error optimizing image ${file}:`, err.message);
+            console.error(`  Error generating WebP for ${file}:`, err.message);
         }
     })));
-    if (totalSaved > 0) {
-        const percent = ((totalSaved / totalOriginal) * 100).toFixed(1);
-        console.log(`  Total image savings: ${fmt(totalSaved)} / ${fmt(totalOriginal)} [${percent}%]`);
-    }
-    return { original: totalOriginal, saved: totalSaved };
+    if (webpSaved > 0) console.log(`  Total WebP savings: ${fmtSize(webpSaved)}`);
+    return { original: stats.original, saved: stats.saved + webpSaved };
 }
 
 

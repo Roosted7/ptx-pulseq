@@ -50,6 +50,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: 3.x
+          cache: 'pip' # caching pip dependencies
 
       - name: Setup Node.js 🟩
         uses: actions/setup-node@v4
@@ -62,13 +63,12 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y pngquant
       
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
 
       - name: Cache MkDocs Material Dependencies 🗄️
         uses: actions/cache@v4
         with:
-          key: mkdocs-material-${{ env.cache_id }}
-          path: .cache 
+          key: mkdocs-material-${{ hashFiles('.cache') }}-cache
+          path: .cache
           restore-keys: |
             mkdocs-material-
 
