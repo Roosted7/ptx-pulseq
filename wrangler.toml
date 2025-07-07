@@ -3,4 +3,6 @@ name = "pulseq-public"
 compatibility_date = "2025-06-05"
 
 # Use modern Workers Assets for static site
-assets = { directory = "./site" }
+[assets]
+directory = "./site/"
+not_found_handling = "404-page"
