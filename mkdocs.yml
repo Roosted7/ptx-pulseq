@@ -18,9 +18,12 @@ extra_css:
   - https://unpkg.com/katex@0/dist/katex.min.css
 
 extra_javascript:
-  - javascripts/katex.js
-  - https://unpkg.com/katex@0/dist/katex.min.js
-  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+  - path: javascripts/katex.js
+    defer: true
+  - path: https://unpkg.com/katex@0/dist/katex.min.js
+    defer: true
+  - path: https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+    defer: true
   #- https://unpkg.com/mermaid@11.7.0/dist/mermaid.min.js
 
 theme:
