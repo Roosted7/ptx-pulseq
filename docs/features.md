@@ -826,7 +826,8 @@ The _lower_ log levels are very verbose. The amount of data can quickly become G
 By default, the interpreter will _not_ run a `.seq` file if the checksum validation fails.
 This ensures that is not corrupted or modified in an unexpected way.  
   
-If you want run (manually) edited files, you can convert the error into a warning:
+During testing or development, it can be useful to run (manually) edited sequences.
+To not restrict this advanced usage, you can convert the error into a warning:
 
 /// html | div.grid
 /// html | div.scroll
@@ -865,6 +866,13 @@ __Examcard UI__
 ///
 
 ///
+///
+
+/// details | Be careful with invalid checksums
+    type: warning
+
+The checksum validation is vital to ensure the integrity of the sequence. Normal usage should never trigger this.  
+We strongly recommend to __keep it enabled.__  _Especially_ on real scanner hardware!
 ///
 
 ---

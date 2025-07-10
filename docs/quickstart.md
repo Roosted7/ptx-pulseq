@@ -15,9 +15,9 @@ hide:
 Before you begin, ensure you have:
 
 1. :scroll: __Philips research agreement__ including:
-    i. :computer: __Pulse programming environment (PPE)__ VM or direct scanner access
-    i. :key: __Clinical Science Keys (CSK's)__ enabling patches on the scanner
-    i. :people_holding_hands: __MR-Paradise__ access to the forum and private GitHub repository
+    i. :computer: __Pulse programming environment _("PPE")___ - VM with simulator and compilation tools
+    i. :key: __Research software options _("CSK")___ - enabling patches on the scanner
+    i. :people_holding_hands: __MR-Paradise__ - access to the forum and private GitHub repository
 2. :brain: __Basic familiarity__ with _Pulseq_ & _Philips_ development
     i. New to _Pulseq_? Check out the [:octicons-arrow-right-24: Pulseq Tutorials](https://pulseq.github.io/tutorials.html)
     i. New to _Philips_? There are courses provided by _Philips_ and [:octicons-arrow-right-24: Gyrotools](https://gyrotools.com/gt/index.php/courses/courses)
@@ -318,8 +318,10 @@ The interpreter is a Philips patch that you need to build and install.
 ___The details on this process are available in the [:octicons-arrow-right-24: private GitHub repository](https://github.com/philips-internal/MRParadisePulseq)___
 
 /// details | Research patches
-The Pulseq interpreter is a patch, like any other. Patches can be wonderful, and might bring great features to your scanner.  
-However this patch, like others, is not made by Philips.
+    type: example
+__The Pulseq interpreter is a patch, _like any other_.__ Patches can be wonderful,
+and might bring great features to your scanner.  
+However this patch, like others, is __not made by Philips__.
 You need to build the patch yourself, and you are responsible for its validation and usage.
 ///
 
@@ -333,6 +335,14 @@ You need to build the patch yourself, and you are responsible for its validation
 4. All okay? Copy over and __enjoy__ the interpreter on your scanner! :tada:
 
 More detailed instructions are available in the repository's `README`.
+
+/// details | Follow all steps, including testing!
+    type: abstract
+The above steps are a high-level overview. We strongly recommend following all steps in the provided `README` file.  
+If you're an experienced researcher, you might be tempted to skip some steps. ___Don't!___  
+Every step is not only designed to take all _safety precautions_ into account -
+they are also advised to simply provide you with the _best experience_.
+///
 
 ---
 
