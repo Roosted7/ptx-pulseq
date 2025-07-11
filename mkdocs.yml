@@ -1,4 +1,4 @@
-site_name: OpenMR - Pulseq sequences on Philips
+site_name: OpenMR.nl - <i>Pulseq sequences on Philips</i>
 site_description: Run Pulseq on Philips MRI scanners. The OpenMR interpreter makes advanced sequences accessible, through the pTx-Pulseq and hybrid extensions!
 site_url: https://openmr.nl
 
@@ -29,7 +29,7 @@ extra_javascript:
 theme:
   name: material
 
-  logo: assets/logo/pTx-Pulseq.png
+  logo: assets/PulseqFileIconSmall.png
   favicon: assets/PulseqFileIconSmall.png
 
   icon:
