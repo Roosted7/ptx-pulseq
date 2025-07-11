@@ -66,6 +66,15 @@ While Philips sequences are usually built with clever re-use of objects and sequ
 Overview of the interpreter architecture
 ///
 
+/// details | Reconstruction & raw data
+    type: question
+
+For conventional "full" (non-hybrid) sequences, that leverage Pulseq encoding,
+the interpreter _currently_ does __not _yet_ support on-scanner Philips reconstruction.__  
+You will need to reconstruct images from the raw data.
+__When using hybrid sequences, the native reconstruction can also be used!__
+///
+
 ---
 
 ## Compatibility
