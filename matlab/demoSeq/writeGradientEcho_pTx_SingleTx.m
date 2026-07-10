@@ -86,7 +86,7 @@ for i = 1:size(tx_pattern, 1)
 
     ptx{i} = rf;
 
-    ptx{i}.signal = reshape(rf.signal' .* tx_pattern(i, :), 1, []);
+    ptx{i}.signal = reshape(rf.signal(:) .* tx_pattern(i, :),  [], 1);
     ptx{i}.t = repmat(rf.t, 1, num_tx);
 
     %[id{i} shapeids{i} ] = seq.registerRfEvent(ptx{i});
